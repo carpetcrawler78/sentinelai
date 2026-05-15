@@ -1,0 +1,92 @@
+<section class="slide" data-screen-label="08 Measurement + audit" style="display:flex; flex-direction:column;">
+  <div class="hdr">
+    <div class="mark"><svg width="22" height="22" style="color: var(--ink);"><use href="#logo-shield"></use></svg><span class="name">Measurement + audit</span></div>
+    <div class="pg">08 / 10</div>
+  </div>
+
+  <div style="margin-top:60px;">
+    <div class="eyebrow" style="margin-bottom:18px;">Quality + documentation</div>
+    <h2 class="section">What we measure, and <em>what an auditor will read.</em></h2>
+  </div>
+
+  <!-- Two columns: metrics + audit fields -->
+  <div style="flex:1; margin-top:54px; display:grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; gap:32px; align-items:stretch;">
+
+    <!-- LEFT: quality metrics -->
+    <div style="display:flex; flex-direction:column;">
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:18px;">
+        <span class="ribbon">Metrics</span>
+        <div class="lab" style="font-size:14px; margin:0;">How we know it works</div>
+      </div>
+
+      <div style="flex:1; display:grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap:18px;">
+        <div class="card" style="padding:20px 24px;">
+          <div class="lab" style="font-size:13px;">Coding quality</div>
+          <ul class="dash">
+            <li><b>Recall@5</b> · correct PT in top 5</li>
+            <li><b>Top-1</b> match vs. human</li>
+            <li>Reviewer correction rate</li>
+            <li>Low-confidence share</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:20px 24px;">
+          <div class="lab" style="font-size:13px;">System health</div>
+          <ul class="dash">
+            <li>Fallback rate</li>
+            <li>Throughput / min</li>
+            <li>Latency / case</li>
+            <li>Error rate / component</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:20px 24px;">
+          <div class="lab" style="font-size:13px;">Data quality</div>
+          <ul class="dash">
+            <li>Duplicate rate</li>
+            <li>Missing narrative</li>
+            <li>Very-short text share</li>
+            <li>Product-code coverage</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:20px 24px;">
+          <div class="lab" style="font-size:13px;">Drift</div>
+          <ul class="dash">
+            <li>Score distribution / week</li>
+            <li>PT-mix shift</li>
+            <li>Recall on held-out batch</li>
+            <li>Reviewer-override trend</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: audit fields -->
+    <div style="display:flex; flex-direction:column;">
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:18px;">
+        <span class="ribbon warm">Audit</span>
+        <div class="lab warm" style="font-size:14px; margin:0; color: var(--terracotta-2);">One row per case · one row per review</div>
+      </div>
+
+      <div class="card warm" style="padding:22px 26px; flex:1; display:flex; flex-direction:column;">
+        <div class="mono" style="font-size:15px; color: var(--ink-2); line-height:1.95;">
+          <div><span style="color:var(--muted);">case_id</span>          · M-2026-1187</div>
+          <div><span style="color:var(--muted);">narrative_hash</span>   · sha256:…</div>
+          <div><span style="color:var(--muted);">model_version</span>    · llama3.2:3b-q4</div>
+          <div><span style="color:var(--muted);">prompt_version</span>   · v2026-05-14</div>
+          <div><span style="color:var(--muted);">candidates[ ]</span>     · pt_code, score × 20</div>
+          <div><span style="color:var(--muted);">suggestion</span>       · { pt, confidence, rationale }</div>
+          <div><span style="color:var(--muted);">reviewer_id</span>      · user@org</div>
+          <div><span style="color:var(--muted);">reviewer_action</span>  · accepted · corrected · rejected</div>
+          <div><span style="color:var(--muted);">final_pt</span>         · pt_code</div>
+          <div><span style="color:var(--muted);">ts_in / ts_out</span>   · ISO-8601 UTC</div>
+        </div>
+        <div style="margin-top:auto; padding-top:14px; border-top:1px dashed var(--terracotta-2);">
+          <div style="font-size:18px; color:var(--ink-2);">
+            <b style="color: var(--rust);">Audit reads top to bottom.</b> Nothing is reconstructed after the fact.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ftr"><div>PM Meeting</div><div class="rule"></div><div>Measurement + audit</div></div>
+</section>

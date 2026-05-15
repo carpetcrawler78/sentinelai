@@ -1,0 +1,94 @@
+<section class="slide" data-screen-label="04 Regulation">
+  <div class="hdr">
+    <div class="mark"><svg width="22" height="22" style="color: var(--ink);"><use href="#logo-shield"></use></svg><span class="name">Regulation</span></div>
+    <div class="pg">04 / 10</div>
+  </div>
+
+  <div style="margin-top:60px;">
+    <div class="eyebrow" style="margin-bottom:18px;">Why a normal AI pipeline doesn't fit</div>
+    <h2 class="section">Three frameworks shape <em>every choice we make.</em></h2>
+  </div>
+
+  <!-- Three pillars -->
+  <div style="margin-top:54px; display:grid; grid-template-columns: 1fr 1fr 1fr; gap:24px;">
+
+    <div class="card" style="padding:26px 30px;">
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+        <span class="ribbon">EU&nbsp;MDR</span>
+        <div class="mono" style="font-size:13px; color:var(--muted);">2017/745</div>
+      </div>
+      <h3>Medical Device Regulation</h3>
+      <ul class="dash">
+        <li>Post-market surveillance is mandatory</li>
+        <li>Serious incidents must be coded + reported</li>
+        <li>Manufacturer owns the process</li>
+      </ul>
+    </div>
+
+    <div class="card warm" style="padding:26px 30px;">
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+        <span class="ribbon warm">EU&nbsp;AI&nbsp;Act</span>
+        <div class="mono" style="font-size:13px; color:var(--muted);">2024/1689</div>
+      </div>
+      <h3>AI in regulated workflows</h3>
+      <ul class="dash">
+        <li>Transparency over AI output</li>
+        <li>Human oversight required</li>
+        <li>Risk management documented</li>
+      </ul>
+    </div>
+
+    <div class="card" style="padding:26px 30px;">
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+        <span class="ribbon">GDPR</span>
+        <div class="mono" style="font-size:13px; color:var(--muted);">2016/679</div>
+      </div>
+      <h3>Personal health data</h3>
+      <ul class="dash">
+        <li>Health data is special category</li>
+        <li>Data minimisation</li>
+        <li>No transfer outside EU without basis</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Compare table -->
+  <div style="margin-top:48px; display:grid; grid-template-columns: auto 1fr; gap:32px; align-items:flex-start;">
+    <div style="padding-top:6px;">
+      <span class="ribbon rust">In detail</span>
+      <div class="serif" style="font-size:22px; font-style:italic; color:var(--ink-2); margin-top:14px; line-height:1.3; max-width:240px;">
+        What this means versus the obvious AI pipeline.
+      </div>
+    </div>
+
+    <div class="card" style="padding:8px 32px;">
+      <div class="cmp-row">
+        <div class="left">Call OpenAI / Groq / Anthropic API</div>
+        <div class="arr">⇒</div>
+        <div class="right"><b>Local LLM</b> · Ollama on EU server</div>
+      </div>
+      <div class="cmp-row">
+        <div class="left">Use the latest model, whatever drops</div>
+        <div class="arr">⇒</div>
+        <div class="right"><b>Pinned model version</b> stored with every case</div>
+      </div>
+      <div class="cmp-row">
+        <div class="left">Auto-classify, push the answer</div>
+        <div class="arr">⇒</div>
+        <div class="right"><b>Top-5 suggestion</b> · human review in loop</div>
+      </div>
+      <div class="cmp-row">
+        <div class="left">Discard intermediate state</div>
+        <div class="arr">⇒</div>
+        <div class="right"><b>Persist</b> candidates, scores, prompts, reviewer action</div>
+      </div>
+      <div class="cmp-row">
+        <div class="left">Default cloud storage</div>
+        <div class="arr">⇒</div>
+        <div class="right"><b>EU-only</b> · Hetzner Frankfurt, no third-country transfer</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ftr"><div>PM Meeting</div><div class="rule"></div><div>Regulation</div></div>
+</section>
