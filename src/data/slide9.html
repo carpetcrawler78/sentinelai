@@ -1,0 +1,119 @@
+<section class="slide" data-screen-label="09 App demo">
+  <div class="hdr">
+    <div class="mark"><svg width="22" height="22" style="color: var(--ink);"><use href="#logo-shield"></use></svg><span class="name">Reviewer screen</span></div>
+    <div class="pg">09 / 10</div>
+  </div>
+
+  <div style="margin-top:60px;">
+    <div class="eyebrow" style="margin-bottom:18px;">Demo · work in progress</div>
+    <h2 class="section"><em>SentinelAI</em> in the reviewer's hands.</h2>
+  </div>
+
+  <!-- App mock -->
+  <div style="margin-top:42px; background: oklch(95% .010 75); border:1px solid var(--line); border-radius:16px; padding:14px; box-shadow: 0 24px 60px -30px oklch(30% .03 60 / .25);">
+
+    <!-- Browser chrome -->
+    <div style="display:flex; align-items:center; gap:10px; padding:0 6px 12px 6px;">
+      <div style="display:flex; gap:6px;">
+        <span style="width:12px; height:12px; border-radius:50%; background: oklch(70% .14 30);"></span>
+        <span style="width:12px; height:12px; border-radius:50%; background: oklch(85% .14 90);"></span>
+        <span style="width:12px; height:12px; border-radius:50%; background: oklch(70% .12 145);"></span>
+      </div>
+      <div class="mono" style="font-size:13px; color:var(--muted); padding:5px 14px; background: var(--cream); border-radius:6px; flex:1; max-width:600px;">sentinelai.local · review · M-2026-1187</div>
+      <div style="display:flex; gap:6px; align-items:center;">
+        <span class="tag" style="font-size:11px; padding:2px 8px;">queue: 47</span>
+        <span class="tag" style="font-size:11px; padding:2px 8px;">reviewer: th</span>
+      </div>
+    </div>
+
+    <!-- App body -->
+    <div style="background: var(--cream); border:1px solid var(--line); border-radius:10px; padding:24px; display:grid; grid-template-columns: 1fr 1fr; gap:28px;">
+
+      <!-- LEFT: narrative -->
+      <div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:14px;">
+          <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Case M-2026-1187</div>
+          <span class="tag" style="font-size:12px;">device class IIb</span>
+        </div>
+
+        <div class="mono" style="font-size:13px; color:var(--muted); margin-bottom:6px; letter-spacing:.08em; text-transform:uppercase;">MAUDE narrative</div>
+        <div class="case" style="padding:18px 22px; border-left-width:4px;">
+          <blockquote style="font-size:20px; line-height:1.4;">
+            Patient using Acme Insulin Pump (XR-100) experienced unexpected battery depletion during overnight basal delivery. Pump alarm did not sound. Patient woke with severe hyperglycaemia (BG 480 mg/dL); hospitalized for 36h.
+          </blockquote>
+        </div>
+
+        <div style="margin-top:20px; display:grid; grid-template-columns: auto 1fr; gap:8px 18px; font-size:16px;">
+          <div class="mono" style="color:var(--muted);">device</div><div>Acme Insulin Pump XR-100</div>
+          <div class="mono" style="color:var(--muted);">product_code</div><div>LZG</div>
+          <div class="mono" style="color:var(--muted);">event_date</div><div>2024-11-08</div>
+          <div class="mono" style="color:var(--muted);">received</div><div>2024-11-14</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: candidates -->
+      <div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:14px;">
+          <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">SentinelAI suggestions</div>
+          <span class="mono" style="font-size:13px; color:var(--muted);">model llama3.2:3b · v2026-05-14</span>
+        </div>
+
+        <!-- Candidate 1 (top) -->
+        <div style="border:2px solid var(--terracotta-2); background: oklch(96% .025 60); border-radius:10px; padding:14px 18px; position:relative;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:14px;">
+            <div>
+              <div style="font-family:Newsreader, serif; font-size:22px; font-weight:600; color:var(--ink);">Hyperglycaemia</div>
+              <div class="mono" style="font-size:13px; color:var(--muted); margin-top:2px;">pt_code 10020639 · SOC: Metabolism &amp; nutrition</div>
+            </div>
+            <div style="text-align:right; min-width:120px;">
+              <div class="mono" style="font-size:13px; color:var(--good); font-weight:700;">0.83 confidence</div>
+              <div style="height:6px; border-radius:3px; background: var(--cream-2); overflow:hidden; margin-top:4px;">
+                <div style="height:100%; width:83%; background: var(--good);"></div>
+              </div>
+            </div>
+          </div>
+          <div style="font-size:14px; color:var(--ink-2); margin-top:10px; font-style:italic;">
+            “Severe BG 480 mg/dL with hospitalization indicates acute hyperglycaemia as the primary event.”
+          </div>
+          <div style="margin-top:12px; display:flex; gap:8px;">
+            <button style="font-size:14px; padding:7px 16px; border:1.5px solid var(--terracotta-2); background:var(--terracotta-2); color:var(--cream); border-radius:6px; font-weight:600; cursor:pointer; font-family:inherit;">Accept</button>
+            <button style="font-size:14px; padding:7px 16px; border:1.5px solid var(--line); background:var(--cream); color:var(--ink-2); border-radius:6px; cursor:pointer; font-family:inherit;">Correct…</button>
+            <button style="font-size:14px; padding:7px 16px; border:1.5px solid var(--line); background:var(--cream); color:var(--ink-2); border-radius:6px; cursor:pointer; font-family:inherit;">Reject</button>
+          </div>
+        </div>
+
+        <!-- Alternative candidates list -->
+        <div class="mono" style="font-size:12px; color:var(--muted); margin: 14px 0 6px 0; letter-spacing:.10em; text-transform:uppercase;">Alternatives (top 5)</div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 14px; background:var(--cream-2); border:1px solid var(--line); border-radius:8px;">
+            <div><span style="font-size:16px; color:var(--ink);">Diabetic ketoacidosis</span> <span class="mono" style="font-size:12px; color:var(--muted);">10012671</span></div>
+            <span class="mono" style="font-size:13px; color:var(--muted);">0.41</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 14px; background:var(--cream-2); border:1px solid var(--line); border-radius:8px;">
+            <div><span style="font-size:16px; color:var(--ink);">Device malfunction</span> <span class="mono" style="font-size:12px; color:var(--muted);">10013636</span></div>
+            <span class="mono" style="font-size:13px; color:var(--muted);">0.34</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 14px; background:var(--cream-2); border:1px solid var(--line); border-radius:8px;">
+            <div><span style="font-size:16px; color:var(--ink);">Battery issue</span> <span class="mono" style="font-size:12px; color:var(--muted);">10004734</span></div>
+            <span class="mono" style="font-size:13px; color:var(--muted);">0.29</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 14px; background:var(--cream-2); border:1px solid var(--line); border-radius:8px;">
+            <div><span style="font-size:16px; color:var(--ink);">Blood glucose increased</span> <span class="mono" style="font-size:12px; color:var(--muted);">10005557</span></div>
+            <span class="mono" style="font-size:13px; color:var(--muted);">0.22</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status bar -->
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:10px 6px 0 6px; font-size:13px;">
+      <div style="display:flex; gap:14px; align-items:center;">
+        <span style="display:inline-flex; align-items:center; gap:6px; color:var(--good);"><span style="width:8px; height:8px; border-radius:50%; background:var(--good);"></span> Audit log writing</span>
+        <span style="color:var(--muted);" class="mono">ts_in 14:32:08 · latency 1.4s</span>
+      </div>
+      <div class="mono" style="color:var(--muted);">SentinelAI v0.4.2 · Hetzner FRA</div>
+    </div>
+  </div>
+
+  <div class="ftr"><div>PM Meeting</div><div class="rule"></div><div>App demo</div></div>
+</section>

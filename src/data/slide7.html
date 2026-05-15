@@ -1,0 +1,131 @@
+<section class="slide" data-screen-label="07 Architecture · Design rationale">
+  <div class="hdr">
+    <div class="mark"><svg width="22" height="22" style="color: var(--ink);"><use href="#logo-shield"></use></svg><span class="name">Architecture · 3 of 3</span></div>
+    <div class="pg">07 / 10</div>
+  </div>
+
+  <div style="margin-top:60px;">
+    <div class="eyebrow" style="margin-bottom:18px;">Design rationale</div>
+    <h2 class="section">Regulation, <em>enforced by architecture.</em></h2>
+  </div>
+
+  <!-- Three WHY columns -->
+  <div style="margin-top:48px; display:grid; grid-template-columns: 1fr 1fr 1fr; gap:24px; align-items:start;">
+
+    <!-- Why retrieval first? -->
+    <div class="card" style="padding:20px 24px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+        <span class="num-plate" style="width:32px; height:32px; font-size:17px;">?</span>
+        <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Why retrieval first?</div>
+      </div>
+      <ul class="dash">
+        <li>27k PTs is too wide for any one model</li>
+        <li>Cheap broad recall, then precise rerank</li>
+        <li>Reranker + LLM only see ~20</li>
+      </ul>
+      <div style="margin-top:14px; display:flex; gap:6px;">
+        <span class="tag" style="font-size:12px;">engineering</span>
+      </div>
+    </div>
+
+    <!-- Why a local LLM? -->
+    <div class="card warm" style="padding:20px 24px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+        <span class="num-plate" style="width:32px; height:32px; font-size:17px;">?</span>
+        <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Why a local LLM?</div>
+      </div>
+      <ul class="dash">
+        <li>Narrative never leaves EU infra</li>
+        <li>Pinned model version, stored per case</li>
+        <li>No third-country transfer ever</li>
+      </ul>
+      <div style="margin-top:14px; display:flex; gap:6px;">
+        <span class="tag" style="font-size:12px;">GDPR</span>
+        <span class="tag" style="font-size:12px;">AI Act</span>
+      </div>
+    </div>
+
+    <!-- Why human in the loop? -->
+    <div class="card" style="padding:20px 24px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+        <span class="num-plate" style="width:32px; height:32px; font-size:17px;">?</span>
+        <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Why human in loop?</div>
+      </div>
+      <ul class="dash">
+        <li>High-risk system under AI Act</li>
+        <li>Top-5 shown, reviewer decides</li>
+        <li>No autonomous coding ever</li>
+      </ul>
+      <div style="margin-top:14px; display:flex; gap:6px;">
+        <span class="tag" style="font-size:12px;">AI Act</span>
+        <span class="tag" style="font-size:12px;">EU MDR</span>
+      </div>
+    </div>
+
+    <!-- Why score fusion? -->
+    <div class="card" style="padding:20px 24px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+        <span class="num-plate" style="width:32px; height:32px; font-size:17px;">?</span>
+        <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Why score fusion?</div>
+      </div>
+      <ul class="dash">
+        <li>Reranker and LLM can disagree</li>
+        <li>Calibrated weighted blend</li>
+        <li>Single number to threshold on</li>
+      </ul>
+      <div style="margin-top:14px; display:flex; gap:6px;">
+        <span class="tag" style="font-size:12px;">engineering</span>
+      </div>
+    </div>
+
+    <!-- Why persist everything? -->
+    <div class="card warm" style="padding:20px 24px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+        <span class="num-plate" style="width:32px; height:32px; font-size:17px;">?</span>
+        <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Why persist everything?</div>
+      </div>
+      <ul class="dash">
+        <li>Audit-grade reproducibility</li>
+        <li>Drift detection over time</li>
+        <li>Reviewer overrides feed quality loop</li>
+      </ul>
+      <div style="margin-top:14px; display:flex; gap:6px;">
+        <span class="tag" style="font-size:12px;">EU MDR</span>
+        <span class="tag" style="font-size:12px;">AI Act</span>
+      </div>
+    </div>
+
+    <!-- Why pinned model version? -->
+    <div class="card" style="padding:20px 24px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+        <span class="num-plate" style="width:32px; height:32px; font-size:17px;">?</span>
+        <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Why pin the model?</div>
+      </div>
+      <ul class="dash">
+        <li>Output must be reproducible later</li>
+        <li>Auditor can re-run the exact code</li>
+        <li>Upgrades go through validation</li>
+      </ul>
+      <div style="margin-top:14px; display:flex; gap:6px;">
+        <span class="tag" style="font-size:12px;">EU MDR</span>
+        <span class="tag" style="font-size:12px;">AI Act</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stack tags -->
+  <div style="margin-top:40px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+    <span class="ribbon ink" style="background:var(--ink);">Stack</span>
+    <span class="tag">PostgreSQL</span>
+    <span class="tag">pgvector</span>
+    <span class="tag">pg_trgm</span>
+    <span class="tag">PubMedBERT</span>
+    <span class="tag">MiniLM cross-encoder</span>
+    <span class="tag">Ollama · llama3.2:3b</span>
+    <span class="tag">Docker</span>
+    <span class="tag">Hetzner DE · EU-only</span>
+    <span class="tag">Grafana</span>
+  </div>
+
+  <div class="ftr"><div>PM Meeting</div><div class="rule"></div><div>Architecture · Design rationale</div></div>
+</section>
