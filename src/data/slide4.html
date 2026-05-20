@@ -1,75 +1,48 @@
-<section class="slide" data-screen-label="04 Three rules">
-  <div class="hdr">
-    <div class="mark"><svg width="22" height="22" style="color: var(--ink);"><use href="#logo-shield"></use></svg><span class="name">Regulation</span></div>
-    <div class="pg">04 / 11</div>
+<section class="slide" data-screen-label="04 How SentinelAI works" style="display:flex; flex-direction:column;">
+  <div class="eyebrow" style="margin-bottom:24px;">Architecture</div>
+  <h2 class="section" style="font-size:88px;">How <em>SentinelAI</em> works.</h2>
+  <div class="serif" style="font-style:italic; font-size:30px; color:var(--muted); margin-top:14px;">
+    three steps &mdash; and why it cannot live in the cloud
   </div>
 
-  <div style="margin-top:60px;">
-    <div class="eyebrow" style="margin-bottom:18px;">Hard constraints</div>
-    <h2 class="section">Three rules <em>we cannot break.</em></h2>
-  </div>
+  <div style="margin-top:64px; display:grid; grid-template-columns: 1fr 50px 1fr 50px 1fr; gap:0; align-items:stretch;">
 
-  <div style="margin-top:72px; display:flex; flex-direction:column; gap:28px;">
-
-    <!-- Row 1 -->
-    <div style="display:grid; grid-template-columns:88px 1fr auto; gap:32px; align-items:center;">
-      <div style="display:flex; justify-content:center;">
-        <span class="num-plate" style="width:68px; height:68px; font-size:30px;">1</span>
-      </div>
-      <div>
-        <div class="serif" style="font-size:34px; color:var(--ink); font-weight:600; line-height:1.15;">No patient data outside servers in Europe</div>
-        <div style="font-size:20px; color:var(--muted); margin-top:8px;">AI runs on our own server in Nuremberg, not in the cloud.</div>
-        <div style="font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5;">
-          GDPR Art. 44 (transfer to third countries prohibited without legal basis)<br>
-          GDPR Art. 9 (health data is special category, heightened protection)
-        </div>
-      </div>
-      <div style="display:flex; gap:8px;">
-        <span class="tag" style="background:var(--ink); color:var(--cream); border-color:var(--ink); font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;">GDPR</span>
-        <span class="tag" style="background:var(--ink); color:var(--cream); border-color:var(--ink); font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;">EU MDR</span>
-      </div>
+    <div class="op blue" style="padding:30px 32px; display:flex; flex-direction:column; gap:14px;">
+      <div style="font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600;">Stage 1</div>
+      <div class="name" style="font-size:36px;">RETRIEVE</div>
+      <div class="serif" style="font-size:42px; color:oklch(38% .14 250); font-weight:600;">27,000 &rarr; 20</div>
+      <div style="font-size:20px; color:var(--ink-2); line-height:1.4;">broad search by keyword + meaning</div>
+      <div class="sub" style="font-size:16px; margin-top:auto; padding-top:14px;">~0.5 sec</div>
     </div>
 
-    <!-- Row 2 -->
-    <div style="display:grid; grid-template-columns:88px 1fr auto; gap:32px; align-items:center;">
-      <div style="display:flex; justify-content:center;">
-        <span class="num-plate" style="width:68px; height:68px; font-size:30px;">2</span>
-      </div>
-      <div>
-        <div class="serif" style="font-size:34px; color:var(--ink); font-weight:600; line-height:1.15;">Human always decides — system only suggests</div>
-        <div style="font-size:20px; color:var(--muted); margin-top:8px;">Top-5 shown to reviewer; reviewer confirms or corrects.</div>
-        <div style="font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5;">
-          EU AI Act Art. 6 + Annex III (medical device software = high-risk AI system)<br>
-          EU AI Act Art. 16 (human oversight obligation for high-risk systems)
-        </div>
-      </div>
-      <div style="display:flex; gap:8px;">
-        <span class="tag" style="background:var(--ink); color:var(--cream); border-color:var(--ink); font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;">EU AI Act</span>
-      </div>
+    <div class="arrow" style="display:flex; align-items:center; justify-content:center; font-size:36px;">&rarr;</div>
+
+    <div class="op green" style="padding:30px 32px; display:flex; flex-direction:column; gap:14px;">
+      <div style="font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600;">Stage 2</div>
+      <div class="name" style="font-size:36px;">RERANK</div>
+      <div class="serif" style="font-size:42px; color:oklch(38% .10 130); font-weight:600;">20 &rarr; 5</div>
+      <div style="font-size:20px; color:var(--ink-2); line-height:1.4;">score each pair: narrative + candidate</div>
+      <div class="sub" style="font-size:16px; margin-top:auto; padding-top:14px;">~20 ms</div>
     </div>
 
-    <!-- Row 3 -->
-    <div style="display:grid; grid-template-columns:88px 1fr auto; gap:32px; align-items:center;">
-      <div style="display:flex; justify-content:center;">
-        <span class="num-plate" style="width:68px; height:68px; font-size:30px;">3</span>
-      </div>
-      <div>
-        <div class="serif" style="font-size:34px; color:var(--ink); font-weight:600; line-height:1.15;">Every decision logged, pinned, reproducible</div>
-        <div style="font-size:20px; color:var(--muted); margin-top:8px;">Model version stored per case, full audit trail.</div>
-        <div style="font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5;">
-          EU MDR Art. 83 (post-market surveillance system mandatory for manufacturers)<br>
-          EU MDR Annex III (technical documentation must cover lifetime of device)
-        </div>
-      </div>
-      <div style="display:flex; gap:8px;">
-        <span class="tag" style="background:var(--ink); color:var(--cream); border-color:var(--ink); font-size:13px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;">EU MDR</span>
-      </div>
+    <div class="arrow" style="display:flex; align-items:center; justify-content:center; font-size:36px;">&rarr;</div>
+
+    <div class="op warm" style="padding:30px 32px; display:flex; flex-direction:column; gap:14px;">
+      <div style="font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600;">Stage 3</div>
+      <div class="name" style="font-size:36px;">SUGGEST</div>
+      <div class="serif" style="font-size:42px; color:var(--rust); font-weight:600;">5 &rarr; 1 + reason</div>
+      <div style="font-size:20px; color:var(--ink-2); line-height:1.4;">local language model</div>
+      <div class="sub" style="font-size:16px; margin-top:auto; padding-top:14px;">~5 to 50 sec</div>
     </div>
   </div>
 
-  <div style="margin-top:64px; font-family:Newsreader, serif; font-style:italic; font-size:22px; color:var(--ink-2); max-width:1200px;">
-    These three constraints shape every architecture choice on the next slides.
+  <div style="margin-top:auto; background: var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px 32px; text-align:center; font-family:'JetBrains Mono', monospace; font-size:20px; letter-spacing:.10em; color:var(--ink); font-weight:600;">
+    reviewer confirms &nbsp;&middot;&nbsp; every step saved &nbsp;&middot;&nbsp; on our own server, not in the cloud
   </div>
 
-  <div class="ftr"><div>MIDTERM MEETING</div><div class="rule"></div><div>Regulation</div></div>
+  <div class="ftr">
+    <div>SentinelAI v0.4.2 &middot; Hetzner FRA &middot; Thomas Heger &middot; 22 May 2026</div>
+    <div class="rule"></div>
+    <div style="color:var(--terracotta-2);">4 / 8</div>
+  </div>
 </section>
