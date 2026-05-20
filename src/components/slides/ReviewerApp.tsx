@@ -25,15 +25,15 @@ const EASY: Case = {
 };
 
 const HARD: Case = {
-  id: "M-2026-2041",
+  id: "3011393376-2024-00990",
   narrative:
-    "Patient woke confused, trembling. CGM read 34 mg/dL at 03:00. Device had not alarmed. Emergency glucose administered by paramedics.",
-  bottomLabel: "Term absent from text — semantic search required",
+    "The infusion device was delivering an inaccurate amount of insulin resulting in elevated blood glucose levels. The patient experienced blood glucose levels above 300 mg/dL. The patient's physician recommended stopping the infusion device and switching to an insulin pen. Blood glucose decreased to 94 mg/dL.",
+  bottomLabel: "Term absent from text — semantic reasoning required",
   candidates: [
-    { pt: "Hypoglycaemia", code: "10020993", confidence: 0.71, rationale: "BG 34 mg/dL + confusion + glucose rescue = textbook hypoglycaemia. Term never appears verbatim." },
-    { pt: "Blood glucose decreased", code: "10005555", confidence: 0.52, rationale: "Lab-only PT; less specific given the clinical syndrome." },
-    { pt: "Loss of consciousness", code: "10024855", confidence: 0.38, rationale: "Confusion noted, not LOC; weaker fit." },
-    { pt: "Device alarm failure", code: "10063269", confidence: 0.31, rationale: "Concurrent device issue, secondary to the patient event." },
+    { pt: "Incorrect dose administered by device", code: "10067585", confidence: 0.93, rationale: "Inaccurate insulin delivery causing hyperglycaemia — device-attributable dosing error. Exact PT term never appears in narrative." },
+    { pt: "Hyperglycaemia", code: "10020639", confidence: 0.58, rationale: "Clinical consequence of the dosing error; secondary to the device event." },
+    { pt: "Device malfunction", code: "10013636", confidence: 0.44, rationale: "Generic device PT; less specific than the dosing-error PT." },
+    { pt: "Blood glucose increased", code: "10005557", confidence: 0.36, rationale: "Lab-only PT; weaker fit for a clinical adverse event." },
   ],
 };
 
@@ -295,7 +295,7 @@ export function ReviewerApp() {
           </svg>
           <span className="name">Reviewer screen</span>
         </div>
-        <div className="pg">09 / 12</div>
+        <div className="pg">09 / 11</div>
       </div>
 
       <div style={{ marginTop: 50 }}>
