@@ -293,7 +293,7 @@ export function ReviewerApp() {
           </svg>
           <span className="name">Reviewer screen</span>
         </div>
-        <div className="pg">09 / 11</div>
+        <div className="pg">09 / 12</div>
       </div>
 
       <div style={{ marginTop: 50 }}>
