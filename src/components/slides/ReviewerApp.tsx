@@ -325,7 +325,7 @@ export function ReviewerApp() {
       </div>
 
       <div className="ftr">
-        <div>PM Meeting</div>
+        <div>MIDTERM MEETING</div>
         <div className="rule" />
         <div>App demo</div>
       </div>
