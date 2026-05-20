@@ -90,7 +90,9 @@ function reducer(s: State, a: Action): State {
   }
 }
 
-function CasePanel({ c, kind }: { c: Case; kind: "easy" | "hard" }) {
+export const EASY_CASE = EASY;
+export const HARD_CASE = HARD;
+export function CasePanel({ c, kind }: { c: Case; kind: "easy" | "hard" }) {
   const [s, dispatch] = useReducer(reducer, c, init);
   const top = s.candidates[0];
   const alts = s.candidates.slice(1);
@@ -293,7 +295,7 @@ export function ReviewerApp() {
           </svg>
           <span className="name">Reviewer screen</span>
         </div>
-        <div className="pg">09 / 11</div>
+        <div className="pg">09 / 12</div>
       </div>
 
       <div style={{ marginTop: 50 }}>
