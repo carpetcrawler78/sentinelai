@@ -7,19 +7,15 @@ import slide2 from "../data/slide2.html?raw";
 import slide3 from "../data/slide3.html?raw";
 import slide4 from "../data/slide4.html?raw";
 import slide5 from "../data/slide5.html?raw";
-import slide6 from "../data/slide6.html?raw";
 import slide7 from "../data/slide7.html?raw";
 import slide8 from "../data/slide8.html?raw";
-import slide10 from "../data/slide10.html?raw";
-import slide11 from "../data/slide11.html?raw";
 
-// Slide 9 = ReviewerApp (React, two cases)
+// Slide 6 = ReviewerApp (React, interactive 3-case switcher)
 const htmlSlides: Record<number, string> = {
-  1: slide1, 2: slide2, 3: slide3, 4: slide4, 5: slide5,
-  6: slide6, 7: slide7, 8: slide8, 10: slide10, 11: slide11,
+  1: slide1, 2: slide2, 3: slide3, 4: slide4, 5: slide5, 7: slide7, 8: slide8,
 };
 
-const TOTAL = 11;
+const TOTAL = 8;
 
 function HtmlSlide({ html }: { html: string }) {
   return <div className="slide-html" dangerouslySetInnerHTML={{ __html: html }} />;
@@ -42,7 +38,9 @@ export function Deck() {
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") {
+      const target = e.target as HTMLElement | null;
+      if (target && (target.tagName === "BUTTON" || target.tagName === "INPUT")) return;
+      if (e.key === "ArrowRight" || e.key === "PageDown") {
         e.preventDefault();
         setIdx((i) => Math.min(TOTAL, i + 1));
       } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
@@ -50,9 +48,8 @@ export function Deck() {
         setIdx((i) => Math.max(1, i - 1));
       } else if (e.key === "Home") setIdx(1);
       else if (e.key === "End") setIdx(TOTAL);
-      else if (/^[0-9]$/.test(e.key)) {
-        const n = e.key === "0" ? 10 : parseInt(e.key, 10);
-        if (n >= 1 && n <= TOTAL) setIdx(n);
+      else if (/^[1-8]$/.test(e.key)) {
+        setIdx(parseInt(e.key, 10));
       }
     }
     window.addEventListener("keydown", onKey);
@@ -63,7 +60,7 @@ export function Deck() {
     <div className="deck-viewport">
       <LogoSymbol />
       <div className="deck-stage-wrap" style={{ ["--scale" as string]: scale }}>
-        {idx === 9 ? <ReviewerApp /> : <HtmlSlide html={htmlSlides[idx]} />}
+        {idx === 6 ? <ReviewerApp /> : <HtmlSlide html={htmlSlides[idx]} />}
       </div>
 
       <div className="deck-pager">
