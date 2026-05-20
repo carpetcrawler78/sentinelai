@@ -98,7 +98,7 @@ function CasePanel({ c, kind }: { c: Case; kind: "easy" | "hard" }) {
   const labelBg = kind === "hard" ? "var(--rust)" : "var(--ink)";
   const labelText = kind === "hard" ? "Hard case" : "Easy case";
 
-  const btn = (label: string, onClick: () => void, primary = false, disabled = false): JSX.Element => (
+  const btn = (label: string, onClick: () => void, primary = false, disabled = false) => (
     <button
       onClick={onClick}
       disabled={disabled}
