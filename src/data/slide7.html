@@ -9,79 +9,43 @@
     <h2 class="section">Regulation, <em>enforced by architecture.</em></h2>
   </div>
 
-  <!-- Three WHY columns -->
-  <div style="margin-top:48px; display:grid; grid-template-columns: 1fr 1fr 1fr; gap:24px; align-items:start;">
+  <div style="margin-top:64px; display:grid; grid-template-columns: 1fr 1fr 1fr; gap:28px; align-items:stretch;">
 
-    <div class="card" style="padding:20px 24px;">
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
-        <span class="num-plate" style="width:32px; height:32px; font-size:17px;">?</span>
-        <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Why retrieval first?</div>
-      </div>
-      <ul class="dash">
-        <li>27k PTs is too wide for any one model</li>
-        <li>Cheap broad recall, then precise rerank</li>
-        <li>Reranker + LLM only see ~20</li>
+    <div class="card" style="padding:30px 32px; display:flex; flex-direction:column;">
+      <div class="serif" style="font-size:28px; color:var(--ink); font-weight:600; line-height:1.2;">Data never leaves Germany</div>
+      <ul class="dash" style="margin-top:18px; font-size:19px;">
+        <li>Inference runs on-premise in Nuremberg</li>
+        <li>No narrative sent to any external API</li>
+        <li>GDPR and EU MDR compliant by architecture</li>
       </ul>
+      <div style="margin-top:auto; padding-top:24px; display:flex; gap:8px; justify-content:flex-end;">
+        <span class="tag" style="background:var(--ink); color:var(--cream); border-color:var(--ink); font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;">GDPR</span>
+        <span class="tag" style="background:var(--ink); color:var(--cream); border-color:var(--ink); font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;">EU MDR</span>
+      </div>
     </div>
 
-    <div class="card warm" style="padding:20px 24px;">
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
-        <span class="num-plate" style="width:32px; height:32px; font-size:17px;">?</span>
-        <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Why a local LLM?</div>
-      </div>
-      <ul class="dash">
-        <li>Narrative never leaves EU infra</li>
-        <li>Pinned model version, stored per case</li>
-        <li>No third-country transfer ever</li>
+    <div class="card warm" style="padding:30px 32px; display:flex; flex-direction:column;">
+      <div class="serif" style="font-size:28px; color:var(--ink); font-weight:600; line-height:1.2;">A human always makes the final call</div>
+      <ul class="dash" style="margin-top:18px; font-size:19px;">
+        <li>System shows Top-5 suggestions with explanation</li>
+        <li>Reviewer accepts, corrects, or rejects</li>
+        <li>No autonomous coding — ever</li>
       </ul>
+      <div style="margin-top:auto; padding-top:24px; display:flex; gap:8px; justify-content:flex-end;">
+        <span class="tag" style="background:var(--ink); color:var(--cream); border-color:var(--ink); font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;">EU AI Act</span>
+      </div>
     </div>
 
-    <div class="card" style="padding:20px 24px;">
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
-        <span class="num-plate" style="width:32px; height:32px; font-size:17px;">?</span>
-        <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Why human in loop?</div>
-      </div>
-      <ul class="dash">
-        <li>High-risk system under AI Act</li>
-        <li>Top-5 shown, reviewer decides</li>
-        <li>No autonomous coding ever</li>
+    <div class="card" style="padding:30px 32px; display:flex; flex-direction:column;">
+      <div class="serif" style="font-size:28px; color:var(--ink); font-weight:600; line-height:1.2;">Every decision is on record</div>
+      <ul class="dash" style="margin-top:18px; font-size:19px;">
+        <li>Candidates, scores, model version, reviewer action all stored</li>
+        <li>Auditor reads top to bottom — nothing reconstructed</li>
+        <li>Model pinned per case: output reproducible years later</li>
       </ul>
-    </div>
-
-    <div class="card" style="padding:20px 24px;">
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
-        <span class="num-plate" style="width:32px; height:32px; font-size:17px;">?</span>
-        <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Why score fusion?</div>
+      <div style="margin-top:auto; padding-top:24px; display:flex; gap:8px; justify-content:flex-end;">
+        <span class="tag" style="background:var(--ink); color:var(--cream); border-color:var(--ink); font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;">EU MDR</span>
       </div>
-      <ul class="dash">
-        <li>Reranker and LLM can disagree</li>
-        <li>Single number to prioritize review queue</li>
-        <li>Not a calibrated probability — a triage index</li>
-      </ul>
-    </div>
-
-    <div class="card warm" style="padding:20px 24px;">
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
-        <span class="num-plate" style="width:32px; height:32px; font-size:17px;">?</span>
-        <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Why persist everything?</div>
-      </div>
-      <ul class="dash">
-        <li>Audit-grade reproducibility</li>
-        <li>Drift detection over time</li>
-        <li>Reviewer overrides feed quality loop</li>
-      </ul>
-    </div>
-
-    <div class="card" style="padding:20px 24px;">
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
-        <span class="num-plate" style="width:32px; height:32px; font-size:17px;">?</span>
-        <div class="serif" style="font-size:24px; color:var(--ink); font-weight:600;">Why pin the model?</div>
-      </div>
-      <ul class="dash">
-        <li>Output must be reproducible later</li>
-        <li>Auditor can re-run the exact code</li>
-        <li>Upgrades go through validation</li>
-      </ul>
     </div>
   </div>
 
