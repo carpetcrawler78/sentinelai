@@ -11,13 +11,14 @@ import slide6 from "../data/slide6.html?raw";
 import slide7 from "../data/slide7.html?raw";
 import slide8 from "../data/slide8.html?raw";
 import slide10 from "../data/slide10.html?raw";
+import slide11 from "../data/slide11.html?raw";
 
 const htmlSlides: Record<number, string> = {
   1: slide1, 2: slide2, 3: slide3, 4: slide4, 5: slide5,
-  6: slide6, 7: slide7, 8: slide8, 10: slide10,
+  6: slide6, 7: slide7, 8: slide8, 10: slide10, 11: slide11,
 };
 
-const TOTAL = 10;
+const TOTAL = 11;
 
 function HtmlSlide({ html }: { html: string }) {
   return <div className="slide-html" dangerouslySetInnerHTML={{ __html: html }} />;
