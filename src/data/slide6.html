@@ -1,153 +1,111 @@
-<section class="slide" data-screen-label="06 Architecture · Rerank · Generate" style="padding:80px 80px 70px 80px; display:flex; flex-direction:column;">
-  <div class="hdr" style="left:80px; right:80px;">
-    <div class="mark"><svg width="22" height="22" style="color: var(--ink);"><use href="#logo-shield"></use></svg><span class="name">Architecture · 2 of 3</span></div>
-    <div class="pg">06 / 10</div>
+<section class="slide" data-screen-label="06 Three stages">
+  <div class="hdr">
+    <div class="mark"><svg width="22" height="22" style="color: var(--ink);"><use href="#logo-shield"></use></svg><span class="name">Architecture</span></div>
+    <div class="pg">06 / 11</div>
   </div>
 
-  <div style="margin-top:16px;">
-    <div class="eyebrow" style="margin-bottom:10px;">Rerank · Generate · Store</div>
-    <h2 class="section" style="font-size:54px;">From K ≈ 20 to <em>one defensible code.</em></h2>
+  <div style="margin-top:60px;">
+    <div class="eyebrow" style="margin-bottom:18px;">Pipeline</div>
+    <h2 class="section">Three stages, <em>one defensible code.</em></h2>
   </div>
 
-  <!-- ============ Horizontal pipeline ============ -->
-  <div style="flex:1; margin-top:38px; display:flex; align-items:stretch; gap:22px; min-height:0;">
+  <!-- Three columns with arrow separators -->
+  <div style="margin-top:60px; display:grid; grid-template-columns: 1fr 40px 1fr 40px 1fr; gap:20px; align-items:start;">
 
-    <!-- ===== INPUT (carried over from Stage 1) ===== -->
-    <div style="flex:0 0 280px; display:flex; flex-direction:column;">
-      <div class="col-label"><b>Carried over</b> · Top-K</div>
-      <div class="result-card plum" style="padding:18px 20px;">
-        <div class="lab" style="margin-bottom:10px;">From Stage 1 · K ≈ 20</div>
-        <div class="item" style="padding:5px 0;"><span class="pt" style="font-size:18px;">Hyperglycaemia</span></div>
-        <div class="item" style="padding:5px 0;"><span class="pt" style="font-size:18px;">Battery issue</span></div>
-        <div class="item" style="padding:5px 0;"><span class="pt" style="font-size:18px;">Device malfunction</span></div>
-        <div class="item" style="padding:5px 0;"><span class="pt" style="font-size:18px;">Diabetic ketoacidosis</span></div>
-        <div class="item" style="padding:5px 0;"><span class="pt" style="font-size:18px;">Hypoglycaemia</span></div>
-        <div class="item" style="padding:5px 0;"><span class="pt" style="font-size:18px;">Blood glucose ↑</span></div>
-        <div class="footnote">… 14 more</div>
+    <!-- STAGE 1 -->
+    <div style="display:flex; flex-direction:column;">
+      <div class="mono" style="font-size:15px; letter-spacing:.20em; text-transform:uppercase; font-weight:700; color: oklch(38% .14 250); padding:8px 14px; background: oklch(94% .04 250); border-radius:6px; align-self:flex-start;">
+        Stage 1 · Retrieve
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:18px; align-items:stretch;">
+        <div class="card" style="padding:14px 18px; height:auto; align-self:stretch;">
+          <div class="serif" style="font-size:22px; font-weight:600; color:var(--ink); line-height:1.25;">27k MedDRA terms → Top-20</div>
+        </div>
+        <div class="card" style="padding:14px 18px; height:auto; align-self:stretch;">
+          <div style="font-size:18px; color:var(--ink-2); line-height:1.35;">Two parallel searches:<br/>keywords + meaning</div>
+        </div>
+        <div class="card" style="padding:14px 18px; height:auto; align-self:stretch;">
+          <div style="font-size:18px; color:var(--ink-2); line-height:1.35;">Fused ranking (RRF)</div>
+        </div>
+        <div class="card" style="padding:14px 18px; height:auto; align-self:stretch; background: oklch(96% .025 250);">
+          <div class="mono" style="font-size:12px; color:var(--muted); letter-spacing:.12em; text-transform:uppercase; margin-bottom:4px;">Goal</div>
+          <div style="font-size:18px; color:var(--ink); line-height:1.3;">Broad recall — nothing missed</div>
+        </div>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:6px; flex-wrap:wrap;">
+        <span class="tag" style="font-size:12px;">PubMedBERT</span>
+        <span class="tag" style="font-size:12px;">pgvector</span>
+        <span class="tag" style="font-size:12px;">pg_trgm</span>
       </div>
     </div>
 
-    <div class="arrow-h"></div>
+    <!-- arrow -->
+    <div style="align-self:center; display:flex; justify-content:center; padding-top:80px;">
+      <div style="color: var(--terracotta-2); font-size:40px; font-weight:300;">→</div>
+    </div>
 
-    <!-- ===== STAGE 2 · RERANK (vertical lane) ===== -->
-    <div style="flex:1; display:flex; flex-direction:column; min-width:0;">
-      <div class="col-label"><b>Stage 2</b> · Rerank · narrow to 5</div>
-      <div class="stage" style="color: var(--olive); padding:28px 22px 22px 22px; flex:1; display:flex; flex-direction:column; align-items:center;">
-        <div class="stage-hd">
-          <span class="num">2</span>
-          <span style="color: var(--olive);">Rerank</span>
+    <!-- STAGE 2 -->
+    <div style="display:flex; flex-direction:column;">
+      <div class="mono" style="font-size:15px; letter-spacing:.20em; text-transform:uppercase; font-weight:700; color: oklch(38% .10 130); padding:8px 14px; background: oklch(94% .05 130); border-radius:6px; align-self:flex-start;">
+        Stage 2 · Rerank
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:18px; align-items:stretch;">
+        <div class="card" style="padding:14px 18px; height:auto; align-self:stretch;">
+          <div class="serif" style="font-size:22px; font-weight:600; color:var(--ink); line-height:1.25;">Top-20 → Top-5</div>
         </div>
-
-        <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex:1; justify-content:center;">
-          <div class="lane-pill green">
-            Cross-encoder
-            <span class="sub">MiniLM · pairwise</span>
-          </div>
-          <div class="arrow-v green" style="height:14px;"></div>
-          <div class="op green" style="text-align:center; min-width:230px;">
-            <div class="name" style="font-size:17px;">Pair scoring</div>
-            <div class="sub mono">score(narrative, PT) × 20</div>
-          </div>
-          <div class="arrow-v green" style="height:14px;"></div>
-          <div class="op green" style="text-align:center; min-width:230px;">
-            <div class="name" style="font-size:17px;">Sigmoid normalize</div>
-            <div class="sub mono">σ(logits) → [0, 1]</div>
-          </div>
-          <div class="arrow-v green" style="height:14px;"></div>
-          <div class="op green" style="text-align:center; min-width:230px;">
-            <div class="name" style="font-size:17px;">Keep Top-5</div>
-            <div class="sub mono">drop 15 low-scorers</div>
-          </div>
+        <div class="card" style="padding:14px 18px; height:auto; align-self:stretch;">
+          <div style="font-size:18px; color:var(--ink-2); line-height:1.35;">Scores each (narrative, candidate) pair jointly</div>
         </div>
+        <div class="card" style="padding:14px 18px; height:auto; align-self:stretch; background: oklch(97% .025 130);">
+          <div class="mono" style="font-size:12px; color:var(--muted); letter-spacing:.12em; text-transform:uppercase; margin-bottom:4px;">Goal</div>
+          <div style="font-size:18px; color:var(--ink); line-height:1.3;">Drop clear mismatches</div>
+        </div>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:6px; flex-wrap:wrap;">
+        <span class="tag" style="font-size:12px;">MiniLM cross-encoder</span>
       </div>
     </div>
 
-    <div class="arrow-h"></div>
-
-    <!-- ===== STAGE 3 · GENERATE (vertical lane) ===== -->
-    <div style="flex:1; display:flex; flex-direction:column; min-width:0;">
-      <div class="col-label"><b>Stage 3</b> · Generate · pick 1</div>
-      <div class="stage" style="color: var(--rust); padding:28px 22px 22px 22px; flex:1; display:flex; flex-direction:column; align-items:center;">
-        <div class="stage-hd">
-          <span class="num">3</span>
-          <span style="color: var(--rust);">Generate</span>
-        </div>
-
-        <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex:1; justify-content:center;">
-          <div class="lane-pill warm">
-            Local LLM
-            <span class="sub">Ollama · llama3.2:3b</span>
-          </div>
-          <div class="arrow-v warm" style="height:14px;"></div>
-          <div class="op warm" style="text-align:center; min-width:230px;">
-            <div class="name" style="font-size:17px;">Prompt assembly</div>
-            <div class="sub mono">narrative + 5 PTs + system</div>
-          </div>
-          <div class="arrow-v warm" style="height:14px;"></div>
-          <div class="op warm" style="text-align:center; min-width:230px;">
-            <div class="name" style="font-size:17px;">LLM inference</div>
-            <div class="sub mono">on-prem · pinned version</div>
-          </div>
-          <div class="arrow-v warm" style="height:14px;"></div>
-          <div class="op warm" style="text-align:center; min-width:230px;">
-            <div class="name" style="font-size:17px;">Parse JSON</div>
-            <div class="sub mono">{ pt, confidence, rationale }</div>
-          </div>
-        </div>
-      </div>
+    <!-- arrow -->
+    <div style="align-self:center; display:flex; justify-content:center; padding-top:80px;">
+      <div style="color: var(--terracotta-2); font-size:40px; font-weight:300;">→</div>
     </div>
 
-    <div class="arrow-h"></div>
-
-    <!-- ===== OUTPUT (Score fusion + final + persist fan-out) ===== -->
-    <div style="flex:0 0 380px; display:flex; flex-direction:column; gap:10px;">
-      <div class="col-label"><b>Output</b> · Persisted decision</div>
-
-      <!-- Score fusion pill -->
-      <div class="op plum" style="padding:10px 16px; text-align:center;">
-        <div class="name" style="font-size:16px;">Score fusion</div>
-        <div class="sub mono" style="color:var(--plum); font-size:12px;">0.3·σ(CE) + 0.7·LLM &nbsp;→&nbsp; 0.83</div>
+    <!-- STAGE 3 -->
+    <div style="display:flex; flex-direction:column;">
+      <div class="mono" style="font-size:15px; letter-spacing:.20em; text-transform:uppercase; font-weight:700; color: var(--rust); padding:8px 14px; background: oklch(95% .04 60); border-radius:6px; align-self:flex-start;">
+        Stage 3 · Suggest
       </div>
-
-      <!-- Final light card -->
-      <div class="result-card" style="flex:1; padding:18px 20px; justify-content:center; background: oklch(96% .025 60);">
-        <div class="lab" style="margin-bottom:8px;">Final · Case M-2026-1187</div>
-        <div class="serif" style="font-size:30px; color: var(--ink); font-weight:600; line-height:1.1;">Hyperglycaemia</div>
-        <div class="mono" style="font-size:13px; color: var(--muted); margin-top:4px;">pt_code 10020639</div>
-        <div style="margin-top:14px; display:flex; align-items:center; gap:10px;">
-          <div style="flex:1; height:6px; border-radius:3px; background: var(--cream-2); border:1px solid var(--line); overflow:hidden;">
-            <div style="height:100%; width:83%; background: var(--good);"></div>
-          </div>
-          <div class="mono" style="font-size:13px; color: var(--good); font-weight:700;">0.83</div>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:18px; align-items:stretch;">
+        <div class="card" style="padding:14px 18px; height:auto; align-self:stretch;">
+          <div class="serif" style="font-size:22px; font-weight:600; color:var(--ink); line-height:1.25;">Top-5 → 1 code + rationale</div>
         </div>
-        <div style="margin-top:14px; font-family:Newsreader, serif; font-style:italic; font-size:15px; line-height:1.35; color: var(--ink-2);">
-          “Severe BG 480 with hospitalization → acute hyperglycaemia.”
+        <div class="card" style="padding:14px 18px; height:auto; align-self:stretch;">
+          <div style="font-size:18px; color:var(--ink-2); line-height:1.35;">Local LLM picks best match</div>
+        </div>
+        <div class="card" style="padding:14px 18px; height:auto; align-self:stretch;">
+          <div style="font-size:18px; color:var(--ink-2); line-height:1.35;">Returns: code, ranking index, written rationale</div>
+        </div>
+        <div class="card" style="padding:14px 18px; height:auto; align-self:stretch; background: oklch(96% .035 60);">
+          <div class="mono" style="font-size:12px; color:var(--muted); letter-spacing:.12em; text-transform:uppercase; margin-bottom:4px;">Goal</div>
+          <div style="font-size:18px; color:var(--ink); line-height:1.3;">One defensible suggestion with explanation</div>
         </div>
       </div>
-
-      <!-- Persist fan-out -->
-      <div style="display:flex; gap:6px;">
-        <span class="tag" style="font-size:12px; flex:1; text-align:center;">Reviewer UI</span>
-        <span class="tag" style="font-size:12px; flex:1; text-align:center;">Audit log</span>
-        <span class="tag" style="font-size:12px; flex:1; text-align:center;">Grafana</span>
+      <div style="margin-top:14px; display:flex; gap:6px; flex-wrap:wrap;">
+        <span class="tag" style="font-size:12px;">Ollama · llama3.2:3b</span>
+        <span class="tag" style="font-size:12px;">on-prem Hetzner</span>
       </div>
-    </div>
-
-    <!-- ===== BRIDGE to next slide ===== -->
-    <div class="bridge">
-      <svg width="58" height="78" viewBox="0 0 58 78" aria-hidden="true">
-        <polygon points="0,0 58,39 0,78" fill="oklch(58% .135 42)" opacity="0.88"></polygon>
-      </svg>
-      <div class="lbl"><b>3 of 3</b>Rationale</div>
     </div>
   </div>
 
-  <!-- Description -->
-  <div style="margin-top:32px; max-width:1620px;">
-    <div class="serif" style="font-size:22px; color: var(--ink-2); line-height:1.45; font-weight:400;">
-      A <b style="color:var(--ink); font-weight:600;">cross-encoder</b> reads each candidate jointly with the narrative and reranks 20 down to 5. The <b style="color:var(--ink); font-weight:600;">local LLM</b> sees only those 5, picks one, attaches confidence + rationale. <b style="color:var(--ink); font-weight:600;">Score fusion</b> blends both signals into a single number — then the full decision lands in Postgres and fans out to reviewer, audit, and Grafana. <em style="color:var(--terracotta-2); font-style:italic;">Nothing is reconstructed after the fact.</em>
-    </div>
+  <!-- Horizontal flow strip below -->
+  <div style="margin-top:48px; padding:18px 28px; background: var(--ink); border-radius:10px; display:flex; align-items:center; justify-content:center; gap:18px; flex-wrap:wrap;">
+    <span style="color:var(--cream); font-size:18px; font-family:Newsreader, serif; font-weight:500;">Reviewer confirms or corrects</span>
+    <span style="color: var(--terracotta-2); font-size:22px;">→</span>
+    <span style="color:var(--cream); font-size:18px; font-family:Newsreader, serif; font-weight:500;">Audit log written</span>
+    <span style="color: var(--terracotta-2); font-size:22px;">→</span>
+    <span style="color:var(--cream); font-size:18px; font-family:Newsreader, serif; font-weight:500;">Signal detection reads coded data</span>
   </div>
 
-  <div class="ftr" style="left:80px; right:80px;"><div>PM Meeting</div><div class="rule"></div><div>Architecture · Rerank · Generate</div></div>
+  <div class="ftr"><div>PM Meeting</div><div class="rule"></div><div>Architecture</div></div>
 </section>
