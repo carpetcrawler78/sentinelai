@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { LogoSymbol } from "./LogoSymbol";
 import { ReviewerApp } from "./slides/ReviewerApp";
-import { SingleReviewerApp } from "./slides/SingleReviewerApp";
 
 import slide1 from "../data/slide1.html?raw";
 import slide2 from "../data/slide2.html?raw";
@@ -14,16 +13,13 @@ import slide8 from "../data/slide8.html?raw";
 import slide10 from "../data/slide10.html?raw";
 import slide11 from "../data/slide11.html?raw";
 
-// Slide 9 = two-case ReviewerApp (React)
-// Slide 10 = single-case SingleReviewerApp (React)
-// Slide 11 = former slide10.html (Status)
-// Slide 12 = former slide11.html (First signals)
+// Slide 9 = ReviewerApp (React, two cases)
 const htmlSlides: Record<number, string> = {
   1: slide1, 2: slide2, 3: slide3, 4: slide4, 5: slide5,
-  6: slide6, 7: slide7, 8: slide8, 11: slide10, 12: slide11,
+  6: slide6, 7: slide7, 8: slide8, 10: slide10, 11: slide11,
 };
 
-const TOTAL = 12;
+const TOTAL = 11;
 
 function HtmlSlide({ html }: { html: string }) {
   return <div className="slide-html" dangerouslySetInnerHTML={{ __html: html }} />;
@@ -67,7 +63,7 @@ export function Deck() {
     <div className="deck-viewport">
       <LogoSymbol />
       <div className="deck-stage-wrap" style={{ ["--scale" as string]: scale }}>
-        {idx === 9 ? <ReviewerApp /> : idx === 10 ? <SingleReviewerApp /> : <HtmlSlide html={htmlSlides[idx]} />}
+        {idx === 9 ? <ReviewerApp /> : <HtmlSlide html={htmlSlides[idx]} />}
       </div>
 
       <div className="deck-pager">
