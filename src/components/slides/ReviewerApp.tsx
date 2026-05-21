@@ -115,7 +115,7 @@ export function ReviewerApp() {
   const c = CASES[idx];
 
   return (
-    <section className="slide" data-screen-label="06 Reviewer demo" style={{ display: "flex", flexDirection: "column" }}>
+    <section className="slide" data-screen-label="07 Reviewer demo" style={{ display: "flex", flexDirection: "column" }}>
       <div className="eyebrow" style={{ marginBottom: 18 }}>Demo · interactive</div>
       <h2 className="section" style={{ fontSize: 72 }}>
         How it looks for the <em>reviewer.</em>
@@ -363,9 +363,9 @@ export function ReviewerApp() {
       </div>
 
       <div className="ftr">
-        <div>SentinelAI v0.4.2 &middot; Hetzner FRA &middot; Thomas Heger &middot; 22 May 2026</div>
+        <div>Thomas Heger &nbsp;|&nbsp; Capstone II Midterm &nbsp;|&nbsp; 22 May 2026</div>
         <div className="rule" />
-        <div style={{ color: "var(--terracotta-2)" }}>6 / 8</div>
+        <div style={{ color: "var(--terracotta-2)" }}>7 / 9</div>
       </div>
     </section>
   );
