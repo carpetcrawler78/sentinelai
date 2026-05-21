@@ -1,48 +1,42 @@
-<section class="slide" data-screen-label="04 How SentinelAI works" style="display:flex; flex-direction:column;">
-  <div class="eyebrow" style="margin-bottom:24px;">Architecture</div>
-  <h2 class="section" style="font-size:88px;">How <em>SentinelAI</em> works.</h2>
+<section class="slide" data-screen-label="04 Scope" style="display:flex; flex-direction:column;">
+  <div class="eyebrow" style="margin-bottom:20px;">Scope</div>
+  <h2 class="section" style="font-size:88px;">What changes <em>with SentinelAI.</em></h2>
   <div class="serif" style="font-style:italic; font-size:30px; color:var(--muted); margin-top:14px;">
-    three steps &mdash; and why it cannot live in the cloud
+    suggest the code, never decide
   </div>
 
-  <div style="margin-top:64px; display:grid; grid-template-columns: 1fr 50px 1fr 50px 1fr; gap:0; align-items:stretch;">
-
-    <div class="op blue" style="padding:30px 32px; display:flex; flex-direction:column; gap:14px;">
-      <div style="font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600;">Stage 1</div>
-      <div class="name" style="font-size:36px;">RETRIEVE</div>
-      <div class="serif" style="font-size:42px; color:oklch(38% .14 250); font-weight:600;">27,000 &rarr; 20</div>
-      <div style="font-size:20px; color:var(--ink-2); line-height:1.4;">broad search by keyword + meaning</div>
-      <div class="sub" style="font-size:16px; margin-top:auto; padding-top:14px;">~0.5 sec</div>
+  <div style="margin-top:60px; display:grid; grid-template-columns: 1fr 1fr; gap:48px; flex:1;">
+    <!-- LEFT: TODAY -->
+    <div style="display:flex; flex-direction:column;">
+      <div class="serif" style="font-size:44px; font-weight:600; color:var(--muted); margin-bottom:24px;">TODAY</div>
+      <div style="display:flex; flex-direction:column; gap:18px;">
+        <div style="background:var(--cream-2); border:1.5px solid var(--line); border-radius:10px; padding:24px 28px; font-size:24px; color:var(--muted); font-weight:500;">~10 min per case</div>
+        <div style="background:var(--cream-2); border:1.5px solid var(--line); border-radius:10px; padding:24px 28px; font-size:24px; color:var(--muted); font-weight:500;">27,000 terms to choose from</div>
+        <div style="background:var(--cream-2); border:1.5px solid var(--line); border-radius:10px; padding:24px 28px; font-size:24px; color:var(--muted); font-weight:500;">results depend on who codes</div>
+        <div style="background:var(--cream-2); border:1.5px solid var(--line); border-radius:10px; padding:24px 28px; font-size:24px; color:var(--muted); font-weight:500;">1 full-time person per company</div>
+      </div>
     </div>
 
-    <div class="arrow" style="display:flex; align-items:center; justify-content:center; font-size:36px;">&rarr;</div>
-
-    <div class="op green" style="padding:30px 32px; display:flex; flex-direction:column; gap:14px;">
-      <div style="font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600;">Stage 2</div>
-      <div class="name" style="font-size:36px;">RERANK</div>
-      <div class="serif" style="font-size:42px; color:oklch(38% .10 130); font-weight:600;">20 &rarr; 5</div>
-      <div style="font-size:20px; color:var(--ink-2); line-height:1.4;">score each pair: narrative + candidate</div>
-      <div class="sub" style="font-size:16px; margin-top:auto; padding-top:14px;">~20 ms</div>
-    </div>
-
-    <div class="arrow" style="display:flex; align-items:center; justify-content:center; font-size:36px;">&rarr;</div>
-
-    <div class="op warm" style="padding:30px 32px; display:flex; flex-direction:column; gap:14px;">
-      <div style="font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600;">Stage 3</div>
-      <div class="name" style="font-size:36px;">SUGGEST</div>
-      <div class="serif" style="font-size:42px; color:var(--rust); font-weight:600;">5 &rarr; 1 + reason</div>
-      <div style="font-size:20px; color:var(--ink-2); line-height:1.4;">local language model</div>
-      <div class="sub" style="font-size:16px; margin-top:auto; padding-top:14px;">~5 to 50 sec</div>
+    <!-- RIGHT: WITH SENTINELAI -->
+    <div style="display:flex; flex-direction:column;">
+      <div class="serif" style="font-size:44px; font-weight:600; color:var(--terracotta-2); margin-bottom:24px;">WITH SENTINELAI</div>
+      <div style="display:flex; flex-direction:column; gap:18px;">
+        <div style="background:var(--cream); border:2px solid var(--terracotta-2); border-radius:10px; padding:24px 28px; font-size:26px; color:var(--ink); font-weight:500;">seconds per case</div>
+        <div style="background:var(--cream); border:2px solid var(--terracotta-2); border-radius:10px; padding:24px 28px; font-size:26px; color:var(--ink); font-weight:500;">5 ranked suggestions, each with a reason</div>
+        <div style="background:var(--cream); border:2px solid var(--terracotta-2); border-radius:10px; padding:24px 28px; font-size:26px; color:var(--ink); font-weight:500;">same method every time</div>
+        <div style="background:var(--cream); border:2px solid var(--terracotta-2); border-radius:10px; padding:24px 28px; font-size:26px; color:var(--ink); font-weight:500;">reviewer stays in charge &mdash; every step saved</div>
+      </div>
     </div>
   </div>
 
-  <div style="margin-top:auto; background: var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px 32px; text-align:center; font-family:'JetBrains Mono', monospace; font-size:20px; letter-spacing:.10em; color:var(--ink); font-weight:600;">
-    reviewer confirms &nbsp;&middot;&nbsp; every step saved &nbsp;&middot;&nbsp; on our own server, not in the cloud
+  <!-- Dark footer strip -->
+  <div style="margin-top:48px; background:var(--ink); color:var(--cream); padding:22px 32px; border-radius:10px; text-align:center; font-size:22px;">
+    <b style="color:var(--amber);">faster</b> and <b style="color:var(--amber);">more consistent</b> &mdash; reviewer keeps control &mdash; <b style="color:var(--amber);">nothing autonomous</b>
   </div>
 
   <div class="ftr">
-    <div>SentinelAI v0.4.2 &middot; Hetzner FRA &middot; Thomas Heger &middot; 22 May 2026</div>
+    <div>Thomas Heger &nbsp;|&nbsp; Capstone II Midterm &nbsp;|&nbsp; 22 May 2026</div>
     <div class="rule"></div>
-    <div style="color:var(--terracotta-2);">4 / 8</div>
+    <div style="color:var(--terracotta-2);">4 / 9</div>
   </div>
 </section>
