@@ -9,13 +9,14 @@ import slide4 from "../data/slide4.html?raw";
 import slide5 from "../data/slide5.html?raw";
 import slide7 from "../data/slide7.html?raw";
 import slide8 from "../data/slide8.html?raw";
+import slide9 from "../data/slide9.html?raw";
 
 // Slide 6 = ReviewerApp (React, interactive 3-case switcher)
 const htmlSlides: Record<number, string> = {
-  1: slide1, 2: slide2, 3: slide3, 4: slide4, 5: slide5, 7: slide7, 8: slide8,
+  1: slide1, 2: slide2, 3: slide3, 4: slide4, 5: slide5, 7: slide7, 8: slide8, 9: slide9,
 };
 
-const TOTAL = 8;
+const TOTAL = 9;
 
 function HtmlSlide({ html }: { html: string }) {
   return <div className="slide-html" dangerouslySetInnerHTML={{ __html: html }} />;
@@ -48,7 +49,7 @@ export function Deck() {
         setIdx((i) => Math.max(1, i - 1));
       } else if (e.key === "Home") setIdx(1);
       else if (e.key === "End") setIdx(TOTAL);
-      else if (/^[1-8]$/.test(e.key)) {
+      else if (/^[1-9]$/.test(e.key)) {
         setIdx(parseInt(e.key, 10));
       }
     }
