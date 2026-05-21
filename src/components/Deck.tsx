@@ -49,7 +49,7 @@ export function Deck() {
         setIdx((i) => Math.max(1, i - 1));
       } else if (e.key === "Home") setIdx(1);
       else if (e.key === "End") setIdx(TOTAL);
-      else if (/^[1-8]$/.test(e.key)) {
+      else if (/^[1-9]$/.test(e.key)) {
         setIdx(parseInt(e.key, 10));
       }
     }
