@@ -2,7 +2,7 @@
   <div class="eyebrow" style="margin-bottom:20px;">Requirements</div>
   <h2 class="section" style="font-size:80px;">Why SentinelAI needs a <em>staged design</em></h2>
   <div class="serif" style="font-style:italic; font-size:28px; color:var(--muted); margin-top:12px; max-width:1500px;">
-    Medical-device reports are noisy, terminology-bound, sensitive, and require human review.
+    Medical-device reports are noisy, terminology-bound, sensitive, and require auditable human review.
   </div>
 
   <!-- 2 x 3 card grid -->
@@ -15,22 +15,33 @@
         Reports mix device issues, patient outcomes, timelines, and vague wording.
       </div>
       <div style="margin-top:18px; align-self:flex-start; background:var(--cream); border:1.5px solid var(--terracotta-2); color:var(--terracotta-2); border-radius:999px; padding:9px 20px; font-family:'JetBrains Mono', monospace; font-size:16px; letter-spacing:.06em; font-weight:600;">
-        Candidate retrieval
+        Broad candidate search
       </div>
     </div>
 
     <!-- 2 -->
     <div class="card" style="display:flex; flex-direction:column; padding:28px 30px;">
-      <div class="serif" style="font-size:30px; font-weight:600; color:var(--ink); line-height:1.1;">Standard terminology</div>
+      <div class="serif" style="font-size:30px; font-weight:600; color:var(--ink); line-height:1.1;">Controlled terminology</div>
       <div style="margin-top:12px; font-size:21px; color:var(--ink-2); line-height:1.5; flex:1;">
-        Outputs must map to MedDRA terms, not free-form summaries.
+        The output must be a valid MedDRA term, not a free-form summary.
       </div>
       <div style="margin-top:18px; align-self:flex-start; background:var(--cream); border:1.5px solid var(--terracotta-2); color:var(--terracotta-2); border-radius:999px; padding:9px 20px; font-family:'JetBrains Mono', monospace; font-size:16px; letter-spacing:.06em; font-weight:600;">
-        Controlled vocabulary
+        Search within vocabulary
       </div>
     </div>
 
     <!-- 3 -->
+    <div class="card" style="display:flex; flex-direction:column; padding:28px 30px;">
+      <div class="serif" style="font-size:30px; font-weight:600; color:var(--ink); line-height:1.1;">Exact words and paraphrases</div>
+      <div style="margin-top:12px; font-size:21px; color:var(--ink-2); line-height:1.5; flex:1;">
+        Some reports contain the exact medical term; others describe the same event indirectly.
+      </div>
+      <div style="margin-top:18px; align-self:flex-start; background:var(--cream); border:1.5px solid var(--terracotta-2); color:var(--terracotta-2); border-radius:999px; padding:9px 20px; font-family:'JetBrains Mono', monospace; font-size:16px; letter-spacing:.06em; font-weight:600;">
+        Lexical + semantic search
+      </div>
+    </div>
+
+    <!-- 4 -->
     <div class="card" style="display:flex; flex-direction:column; padding:28px 30px;">
       <div class="serif" style="font-size:30px; font-weight:600; color:var(--ink); line-height:1.1;">Ambiguous meaning</div>
       <div style="margin-top:12px; font-size:21px; color:var(--ink-2); line-height:1.5; flex:1;">
@@ -41,43 +52,34 @@
       </div>
     </div>
 
-    <!-- 4 -->
-    <div class="card" style="display:flex; flex-direction:column; padding:28px 30px;">
-      <div class="serif" style="font-size:30px; font-weight:600; color:var(--ink); line-height:1.1;">Privacy &amp; governance</div>
-      <div style="margin-top:12px; font-size:21px; color:var(--ink-2); line-height:1.5; flex:1;">
-        Potentially sensitive reports should stay in the trusted environment by default.
-      </div>
-      <div style="margin-top:18px; align-self:flex-start; background:var(--cream); border:1.5px solid var(--terracotta-2); color:var(--terracotta-2); border-radius:999px; padding:9px 20px; font-family:'JetBrains Mono', monospace; font-size:16px; letter-spacing:.06em; font-weight:600;">
-        Local-first processing
-      </div>
-    </div>
-
     <!-- 5 -->
     <div class="card" style="display:flex; flex-direction:column; padding:28px 30px;">
-      <div class="serif" style="font-size:30px; font-weight:600; color:var(--ink); line-height:1.1;">Auditability</div>
+      <div class="serif" style="font-size:30px; font-weight:600; color:var(--ink); line-height:1.1;">Local and auditable</div>
       <div style="margin-top:12px; font-size:21px; color:var(--ink-2); line-height:1.5; flex:1;">
-        Each suggestion must be reviewable: candidates, scores, version, and decision.
+        Open-ended inference on every report would be slow, hard to control, and difficult to audit.
       </div>
       <div style="margin-top:18px; align-self:flex-start; background:var(--cream); border:1.5px solid var(--terracotta-2); color:var(--terracotta-2); border-radius:999px; padding:9px 20px; font-family:'JetBrains Mono', monospace; font-size:16px; letter-spacing:.06em; font-weight:600;">
-        Logged pipeline
+        Constrained LLM step
       </div>
     </div>
 
     <!-- 6 -->
     <div class="card" style="display:flex; flex-direction:column; padding:28px 30px;">
-      <div class="serif" style="font-size:30px; font-weight:600; color:var(--ink); line-height:1.1;">Scale &amp; latency</div>
+      <div class="serif" style="font-size:30px; font-weight:600; color:var(--ink); line-height:1.1;">Human accountability</div>
       <div style="margin-top:12px; font-size:21px; color:var(--ink-2); line-height:1.5; flex:1;">
-        A large model reading every full report would be slow, costly, and hard to control.
+        The system proposes candidates; the reviewer confirms, corrects, or rejects.
       </div>
       <div style="margin-top:18px; align-self:flex-start; background:var(--cream); border:1.5px solid var(--terracotta-2); color:var(--terracotta-2); border-radius:999px; padding:9px 20px; font-family:'JetBrains Mono', monospace; font-size:16px; letter-spacing:.06em; font-weight:600;">
-        Staged architecture
+        Human-in-the-loop
       </div>
     </div>
   </div>
 
   <!-- Transition line into architecture -->
   <div style="margin-top:32px; background:var(--ink); color:var(--cream); padding:22px 32px; border-radius:10px; text-align:center; font-size:22px; line-height:1.4;">
-    Therefore, SentinelAI uses a staged human-in-the-loop design: retrieve candidates &rarr; rerank &rarr; suggest &rarr; review
+    Therefore, SentinelAI uses a staged funnel: broad search &rarr; careful comparison &rarr; constrained suggestion &rarr; human review
+    <br>
+    <span style="font-size:18px; color:var(--line);">Not one big model deciding directly — a controlled pipeline that narrows the search space.</span>
   </div>
 
   <div class="ftr">
