@@ -3,8 +3,7 @@ import { LogoSymbol } from "./LogoSymbol";
 import { ReviewerApp } from "./slides/ReviewerApp";
 
 import slide1 from "../data/slide1.html?raw";
-import slide2 from "../data/slide2.html?raw";
-import slide3 from "../data/slide3.html?raw";
+import { slide2Html as slide2, slide3Html as slide3 } from "../data/domainSlides";
 import slide4 from "../data/slide4.html?raw";
 import slideRequirements from "../data/slideRequirements.html?raw";
 import slide5 from "../data/slide5.html?raw";
