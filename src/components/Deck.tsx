@@ -8,6 +8,7 @@ import slideProblem from "../data/slideProblem.html?raw";
 import slide4 from "../data/slide4.html?raw";
 import slideRequirements from "../data/slideRequirements.html?raw";
 import slidePipeline from "../data/slidePipeline.html?raw";
+import slidePipeline2 from "../data/slidePipeline2.html?raw";
 import slide5 from "../data/slide5.html?raw";
 import slide6 from "../data/slide6.html?raw";
 import slide8 from "../data/slide8.html?raw";
@@ -15,10 +16,10 @@ import slide9 from "../data/slide9.html?raw";
 
 // Slide 10 = ReviewerApp (React, interactive)
 const htmlSlides: Record<number, string> = {
-  1: slide1, 2: slide2, 3: slide3, 4: slideProblem, 5: slide4, 6: slideRequirements, 7: slidePipeline, 8: slide5, 9: slide6, 11: slide8, 12: slide9,
+  1: slide1, 2: slide2, 3: slide3, 4: slideProblem, 5: slide4, 6: slideRequirements, 7: slidePipeline, 8: slide5, 9: slide6, 11: slide8, 12: slide9, 13: slidePipeline2,
 };
 
-const TOTAL = 12;
+const TOTAL = 13;
 
 function HtmlSlide({ html }: { html: string }) {
   return <div className="slide-html" dangerouslySetInnerHTML={{ __html: html }} />;
