@@ -61,7 +61,7 @@ const TOP_FLOW = `
   <div style="margin-top:42px; display:grid; grid-template-columns:1fr 60px 1fr 60px 1fr; align-items:stretch;">
 
     <!-- CARD 1 -->
-    <div class="card" style="display:flex; flex-direction:column; align-items:center; text-align:center; min-height:338px; padding:26px 34px;">
+    <div class="card" style="display:flex; flex-direction:column; align-items:center; text-align:center; min-height:296px; padding:26px 34px;">
       ${stepLabel("Step 1")}
       <div style="margin:24px 0 22px; color:var(--terracotta-2);">${ICON_DEVICE}</div>
       <div class="serif" style="font-size:30px; line-height:1.3; color:var(--ink); font-weight:500;">
@@ -72,7 +72,7 @@ const TOP_FLOW = `
     ${ARROW}
 
     <!-- CARD 2 -->
-    <div class="card" style="display:flex; flex-direction:column; align-items:center; text-align:center; min-height:338px; padding:26px 34px;">
+    <div class="card" style="display:flex; flex-direction:column; align-items:center; text-align:center; min-height:296px; padding:26px 34px;">
       ${stepLabel("Step 2")}
       <div style="margin:24px 0 22px; color:var(--terracotta-2);">${ICON_REPORT}</div>
       <div class="serif" style="font-size:30px; line-height:1.3; color:var(--ink); font-weight:500;">
@@ -83,18 +83,21 @@ const TOP_FLOW = `
     ${ARROW}
 
     <!-- CARD 3 -->
-    <div class="card" style="display:flex; flex-direction:column; align-items:center; text-align:center; min-height:338px; padding:26px 34px;">
+    <div class="card" style="display:flex; flex-direction:column; align-items:center; text-align:center; min-height:296px; padding:26px 34px;">
       ${stepLabel("Step 3")}
       <div style="margin:24px 0 18px; color:var(--terracotta-2);">${ICON_REGULATORY}</div>
       <div class="serif" style="font-size:30px; line-height:1.25; color:var(--ink); font-weight:500;">Regulatory workflows</div>
       <div style="font-size:24px; line-height:1.4; color:var(--ink-2); margin-top:6px;">
         Require the event to be <b style="color:var(--ink); font-weight:600;">coded into MedDRA</b>
       </div>
-      <div style="margin-top:auto; padding-top:16px; font-size:18px; line-height:1.35; color:var(--muted);">
-        MedDRA = international medical terminology for safety reporting
-      </div>
     </div>
+  </div>
+
+  <!-- MedDRA explanation, outside the cards, larger & left-aligned -->
+  <div style="margin-top:20px; font-size:26px; line-height:1.4; color:var(--muted);">
+    <b style="color:var(--ink-2); font-weight:600;">MedDRA</b> = international medical terminology for safety reporting
   </div>`;
+
 
 const footer = (page: string) => `
   <div class="ftr">
@@ -114,7 +117,7 @@ export const slide3Html = `
   ${TOP_FLOW}
 
   <!-- Lower example layer (appears on top of the identical slide-2 flow) -->
-  <div style="margin-top:26px; display:grid; grid-template-columns:1fr 70px 1fr; align-items:stretch;">
+  <div style="margin-top:18px; display:grid; grid-template-columns:1fr 70px 1fr; align-items:stretch;">
 
     <!-- INCIDENT REPORT -->
     <div style="background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:26px 32px; display:flex; align-items:center; gap:22px;">
@@ -147,7 +150,7 @@ export const slide3Html = `
   </div>
 
   <!-- Dark summary bar (key message of slide 3) -->
-  <div style="margin-top:22px; background:var(--ink); color:var(--cream); padding:24px 40px; border-radius:12px; text-align:center; font-size:30px; line-height:1.35;">
+  <div style="margin-top:18px; background:var(--ink); color:var(--cream); padding:24px 40px; border-radius:12px; text-align:center; font-size:30px; line-height:1.35;">
     From <b style="color:var(--amber);">free text</b> to <b style="color:var(--amber);">1 best term</b> out of <b style="color:var(--amber);">~27,000</b> possible terms
   </div>
 
