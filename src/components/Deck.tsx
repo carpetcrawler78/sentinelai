@@ -6,17 +6,18 @@ import slide1 from "../data/slide1.html?raw";
 import slide2 from "../data/slide2.html?raw";
 import slide3 from "../data/slide3.html?raw";
 import slide4 from "../data/slide4.html?raw";
+import slideRequirements from "../data/slideRequirements.html?raw";
 import slide5 from "../data/slide5.html?raw";
 import slide6 from "../data/slide6.html?raw";
 import slide8 from "../data/slide8.html?raw";
 import slide9 from "../data/slide9.html?raw";
 
-// Slide 7 = ReviewerApp (React, interactive)
+// Slide 8 = ReviewerApp (React, interactive)
 const htmlSlides: Record<number, string> = {
-  1: slide1, 2: slide2, 3: slide3, 4: slide4, 5: slide5, 6: slide6, 8: slide8, 9: slide9,
+  1: slide1, 2: slide2, 3: slide3, 4: slide4, 5: slideRequirements, 6: slide5, 7: slide6, 9: slide8, 10: slide9,
 };
 
-const TOTAL = 9;
+const TOTAL = 10;
 
 function HtmlSlide({ html }: { html: string }) {
   return <div className="slide-html" dangerouslySetInnerHTML={{ __html: html }} />;
@@ -61,7 +62,7 @@ export function Deck() {
     <div className="deck-viewport">
       <LogoSymbol />
       <div className="deck-stage-wrap" style={{ ["--scale" as string]: scale }}>
-        {idx === 7 ? <ReviewerApp /> : <HtmlSlide html={htmlSlides[idx]} />}
+        {idx === 8 ? <ReviewerApp /> : <HtmlSlide html={htmlSlides[idx]} />}
       </div>
 
       <div className="deck-pager">
