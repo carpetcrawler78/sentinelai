@@ -51,7 +51,12 @@ const stepLabel = (n: string) => `
   <div style="font-family:'JetBrains Mono',monospace; font-size:21px; letter-spacing:.24em;
               text-transform:uppercase; color:var(--terracotta-2); font-weight:600;">${n}</div>`;
 
-const TOP_FLOW = `
+// Highlight ("marker pen") used on the word MedDRA — slide 2 only.
+const MARK = `background:var(--amber); color:var(--ink); font-weight:700; padding:0 6px; border-radius:4px; box-decoration-break:clone; -webkit-box-decoration-break:clone;`;
+
+// opts.markMeddra  -> highlight the word "MedDRA" inside the Step 3 card
+// opts.showExplain -> append the MedDRA explanation line under the grid (right-aligned)
+const topFlow = ({ markMeddra = false, showExplain = false } = {}) => `
   <div class="eyebrow" style="margin-bottom:18px;">Domain</div>
   <h2 class="section" style="font-size:88px;">What is coding, <em>why it matters.</em></h2>
   <div class="serif" style="font-style:italic; font-size:32px; color:var(--muted); margin-top:12px;">
@@ -88,15 +93,23 @@ const TOP_FLOW = `
       <div style="margin:24px 0 18px; color:var(--terracotta-2);">${ICON_REGULATORY}</div>
       <div class="serif" style="font-size:30px; line-height:1.25; color:var(--ink); font-weight:500;">Regulatory workflows</div>
       <div style="font-size:24px; line-height:1.4; color:var(--ink-2); margin-top:6px;">
-        Require the event to be <b style="color:var(--ink); font-weight:600;">coded into MedDRA</b>
+        Require the event to be coded into ${
+          markMeddra
+            ? `<span style="${MARK}">MedDRA</span>`
+            : `<b style="color:var(--ink); font-weight:600;">MedDRA</b>`
+        }
       </div>
     </div>
   </div>
+  ${
+    showExplain
+      ? `<!-- MedDRA explanation, outside the cards, right-aligned & highlighted -->
+  <div style="margin-top:20px; font-size:26px; line-height:1.4; color:var(--muted); text-align:right;">
+    <span style="${MARK}">MedDRA</span> = international medical terminology for safety reporting
+  </div>`
+      : ``
+  }`;
 
-  <!-- MedDRA explanation, outside the cards, larger & left-aligned -->
-  <div style="margin-top:20px; font-size:26px; line-height:1.4; color:var(--muted);">
-    <b style="color:var(--ink-2); font-weight:600;">MedDRA</b> = international medical terminology for safety reporting
-  </div>`;
 
 
 const footer = (page: string) => `
@@ -108,13 +121,13 @@ const footer = (page: string) => `
 
 export const slide2Html = `
 <section class="slide" data-screen-label="02 Domain" style="display:flex; flex-direction:column;">
-  ${TOP_FLOW}
+  ${topFlow({ markMeddra: true, showExplain: true })}
   ${footer("2 / 10")}
 </section>`;
 
 export const slide3Html = `
 <section class="slide" data-screen-label="03 Domain" style="display:flex; flex-direction:column;">
-  ${TOP_FLOW}
+  ${topFlow()}
 
   <!-- Lower example layer (appears on top of the identical slide-2 flow) -->
   <div style="margin-top:18px; display:grid; grid-template-columns:1fr 70px 1fr; align-items:stretch;">
