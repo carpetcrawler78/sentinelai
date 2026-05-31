@@ -117,15 +117,15 @@ export const slide3Html = `
   <div style="margin-top:26px; display:grid; grid-template-columns:1fr 70px 1fr; align-items:stretch;">
 
     <!-- INCIDENT REPORT -->
-    <div style="background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:26px 32px; display:flex; align-items:center; gap:26px;">
+    <div style="background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:26px 32px; display:flex; align-items:center; gap:22px;">
       <div style="color:var(--terracotta-2); flex:0 0 auto;">${ICON_SEARCH}</div>
       <div>
-        <div style="font-family:'JetBrains Mono',monospace; font-size:18px; letter-spacing:.2em;
-                    text-transform:uppercase; color:var(--terracotta-2); font-weight:600; margin-bottom:10px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:22px; letter-spacing:.12em;
+                    text-transform:uppercase; color:var(--terracotta-2); font-weight:700; margin-bottom:12px;">
           Incident report
         </div>
-        <div class="serif" style="font-style:italic; font-size:26px; line-height:1.4; color:var(--ink);">
-          &ldquo;Patient using an insulin pump woke confused at 3&nbsp;AM. Blood glucose reading was 34&nbsp;mg/dL.&rdquo;
+        <div class="serif" style="font-style:italic; font-size:32px; line-height:1.3; color:var(--ink); font-weight:500;">
+          &ldquo;Insulin pump user woke confused at 3&nbsp;AM. Blood glucose was 34&nbsp;mg/dL.&rdquo;
         </div>
       </div>
     </div>
