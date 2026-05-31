@@ -1,42 +1,76 @@
-<section class="slide" data-screen-label="04 Scope" style="display:flex; flex-direction:column;">
-  <div class="eyebrow" style="margin-bottom:20px;">Scope</div>
-  <h2 class="section" style="font-size:88px;">What changes <em>with SentinelAI.</em></h2>
-  <div class="serif" style="font-style:italic; font-size:30px; color:var(--muted); margin-top:14px;">
-    suggest the code, never decide
-  </div>
-
-  <div style="margin-top:60px; display:grid; grid-template-columns: 1fr 1fr; gap:48px; flex:1;">
-    <!-- LEFT: TODAY -->
-    <div style="display:flex; flex-direction:column;">
-      <div class="serif" style="font-size:44px; font-weight:600; color:var(--muted); margin-bottom:24px;">TODAY</div>
-      <div style="display:flex; flex-direction:column; gap:18px;">
-        <div style="background:var(--cream-2); border:1.5px solid var(--line); border-radius:10px; padding:24px 28px; font-size:24px; color:var(--muted); font-weight:500;">~10 min per case</div>
-        <div style="background:var(--cream-2); border:1.5px solid var(--line); border-radius:10px; padding:24px 28px; font-size:24px; color:var(--muted); font-weight:500;">27,000 terms to choose from</div>
-        <div style="background:var(--cream-2); border:1.5px solid var(--line); border-radius:10px; padding:24px 28px; font-size:24px; color:var(--muted); font-weight:500;">results depend on who codes</div>
-        <div style="background:var(--cream-2); border:1.5px solid var(--line); border-radius:10px; padding:24px 28px; font-size:24px; color:var(--muted); font-weight:500;">1 full-time person per company</div>
-      </div>
-    </div>
-
-    <!-- RIGHT: WITH SENTINELAI -->
-    <div style="display:flex; flex-direction:column;">
-      <div class="serif" style="font-size:44px; font-weight:600; color:var(--terracotta-2); margin-bottom:24px;">WITH SENTINELAI</div>
-      <div style="display:flex; flex-direction:column; gap:18px;">
-        <div style="background:var(--cream); border:2px solid var(--terracotta-2); border-radius:10px; padding:24px 28px; font-size:26px; color:var(--ink); font-weight:500;">seconds per case</div>
-        <div style="background:var(--cream); border:2px solid var(--terracotta-2); border-radius:10px; padding:24px 28px; font-size:26px; color:var(--ink); font-weight:500;">5 ranked suggestions, each with a reason</div>
-        <div style="background:var(--cream); border:2px solid var(--terracotta-2); border-radius:10px; padding:24px 28px; font-size:26px; color:var(--ink); font-weight:500;">same method every time</div>
-        <div style="background:var(--cream); border:2px solid var(--terracotta-2); border-radius:10px; padding:24px 28px; font-size:26px; color:var(--ink); font-weight:500;">reviewer stays in charge &mdash; every step saved</div>
-      </div>
+<section class="slide" data-screen-label="05 Scope" style="display:flex; flex-direction:column;">
+  <!-- Fixed-height header zone so the TODAY column never shifts between slides -->
+  <div style="height:240px; flex-shrink:0;">
+    <div class="eyebrow" style="margin-bottom:20px;">Scope</div>
+    <h2 class="section" style="font-size:72px;">The solution: <em>SentinelAI assists &mdash; never decides.</em></h2>
+    <div class="serif" style="font-style:italic; font-size:30px; color:var(--muted); margin-top:16px;">
+      Suggest the code, never decide
     </div>
   </div>
 
-  <!-- Dark footer strip -->
-  <div style="margin-top:48px; background:var(--ink); color:var(--cream); padding:22px 32px; border-radius:10px; text-align:center; font-size:22px;">
-    <b style="color:var(--amber);">faster</b> and <b style="color:var(--amber);">more consistent</b> &mdash; reviewer keeps control &mdash; <b style="color:var(--amber);">nothing autonomous</b>
+  <!-- Heading row: TODAY (left) | arrow gap | WITH SENTINELAI (right) -->
+  <div style="display:grid; grid-template-columns:1fr 80px 1fr; align-items:end; margin-bottom:20px; flex-shrink:0;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);">TODAY</div>
+    <div></div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--terracotta-2);">With SentinelAI</div>
+  </div>
+
+  <!-- Rows: each row is a 3-col grid; TODAY box is identical to the Problem slide -->
+  <div style="display:flex; flex-direction:column; gap:18px; flex-shrink:0;">
+    <!-- ROW 1 -->
+    <div style="display:grid; grid-template-columns:1fr 80px 1fr; align-items:stretch;">
+      <div style="height:110px; box-sizing:border-box; background:var(--cream-2); border:1.5px solid var(--line); border-radius:10px; padding:16px 28px; display:flex; flex-direction:column; justify-content:center;">
+        <div style="font-size:28px; color:var(--ink); font-weight:600;">10 min per case</div>
+        <div style="font-size:20px; color:var(--muted); margin-top:6px;">Cases pile up when report volume is high</div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; color:var(--terracotta-2); font-family:'JetBrains Mono',monospace; font-size:36px; line-height:1;">&rarr;</div>
+      <div style="height:110px; box-sizing:border-box; background:var(--cream); border:2px solid var(--terracotta-2); border-radius:10px; padding:16px 28px; display:flex; flex-direction:column; justify-content:center;">
+        <div style="font-size:26px; color:var(--ink); font-weight:500;">Seconds per case</div>
+      </div>
+    </div>
+    <!-- ROW 2 -->
+    <div style="display:grid; grid-template-columns:1fr 80px 1fr; align-items:stretch;">
+      <div style="height:110px; box-sizing:border-box; background:var(--cream-2); border:1.5px solid var(--line); border-radius:10px; padding:16px 28px; display:flex; flex-direction:column; justify-content:center;">
+        <div style="font-size:28px; color:var(--ink); font-weight:600;">27,000 candidate terms</div>
+        <div style="font-size:20px; color:var(--muted); margin-top:6px;">Too many to scan reliably</div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; color:var(--terracotta-2); font-family:'JetBrains Mono',monospace; font-size:36px; line-height:1;">&rarr;</div>
+      <div style="height:110px; box-sizing:border-box; background:var(--cream); border:2px solid var(--terracotta-2); border-radius:10px; padding:16px 28px; display:flex; flex-direction:column; justify-content:center;">
+        <div style="font-size:26px; color:var(--ink); font-weight:500;">5 ranked suggestions, each with a reason</div>
+      </div>
+    </div>
+    <!-- ROW 3 -->
+    <div style="display:grid; grid-template-columns:1fr 80px 1fr; align-items:stretch;">
+      <div style="height:110px; box-sizing:border-box; background:var(--cream-2); border:1.5px solid var(--line); border-radius:10px; padding:16px 28px; display:flex; flex-direction:column; justify-content:center;">
+        <div style="font-size:28px; color:var(--ink); font-weight:600;">Varies by coder</div>
+        <div style="font-size:20px; color:var(--muted); margin-top:6px;">Not reproducible across teams</div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; color:var(--terracotta-2); font-family:'JetBrains Mono',monospace; font-size:36px; line-height:1;">&rarr;</div>
+      <div style="height:110px; box-sizing:border-box; background:var(--cream); border:2px solid var(--terracotta-2); border-radius:10px; padding:16px 28px; display:flex; flex-direction:column; justify-content:center;">
+        <div style="font-size:26px; color:var(--ink); font-weight:500;">Consistent logic on every report</div>
+      </div>
+    </div>
+    <!-- ROW 4 -->
+    <div style="display:grid; grid-template-columns:1fr 80px 1fr; align-items:stretch;">
+      <div style="height:110px; box-sizing:border-box; background:var(--cream-2); border:1.5px solid var(--line); border-radius:10px; padding:16px 28px; display:flex; flex-direction:column; justify-content:center;">
+        <div style="font-size:28px; color:var(--ink); font-weight:600;">Specialist time is scarce</div>
+        <div style="font-size:20px; color:var(--muted); margin-top:6px;">Bottleneck for small and mid-size companies</div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; color:var(--terracotta-2); font-family:'JetBrains Mono',monospace; font-size:36px; line-height:1;">&rarr;</div>
+      <div style="height:110px; box-sizing:border-box; background:var(--cream); border:2px solid var(--terracotta-2); border-radius:10px; padding:16px 28px; display:flex; flex-direction:column; justify-content:center;">
+        <div style="font-size:26px; color:var(--ink); font-weight:500;">Reviewer stays in charge &mdash; every step saved</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dark solution bar (Solution slide only) -->
+  <div style="margin-top:18px; flex-shrink:0; background:var(--ink); color:var(--cream); padding:20px 32px; border-radius:10px; text-align:center; font-size:24px;">
+    <b style="color:var(--amber);">Faster</b> and <b style="color:var(--amber);">more consistent</b> &mdash; reviewer keeps control &mdash; <b style="color:var(--amber);">nothing autonomous</b>
   </div>
 
   <div class="ftr">
-    <div>Thomas Heger &nbsp;|&nbsp; Capstone II Midterm &nbsp;|&nbsp; 22 May 2026</div>
+    <div>THOMAS HEGER &nbsp;|&nbsp; CAPSTONE II &nbsp;|&nbsp; 03 JUN 2026</div>
     <div class="rule"></div>
-    <div style="color:var(--terracotta-2);">4 / 10</div>
+    <div style="color:var(--terracotta-2);">5 / 11</div>
   </div>
 </section>
