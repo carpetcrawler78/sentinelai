@@ -121,13 +121,13 @@ const footer = (page: string) => `
 
 export const slide2Html = `
 <section class="slide" data-screen-label="02 Domain" style="display:flex; flex-direction:column;">
-  ${TOP_FLOW}
+  ${topFlow({ markMeddra: true, showExplain: true })}
   ${footer("2 / 10")}
 </section>`;
 
 export const slide3Html = `
 <section class="slide" data-screen-label="03 Domain" style="display:flex; flex-direction:column;">
-  ${TOP_FLOW}
+  ${topFlow()}
 
   <!-- Lower example layer (appears on top of the identical slide-2 flow) -->
   <div style="margin-top:18px; display:grid; grid-template-columns:1fr 70px 1fr; align-items:stretch;">
