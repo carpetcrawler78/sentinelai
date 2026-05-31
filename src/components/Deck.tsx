@@ -62,7 +62,7 @@ export function Deck() {
     <div className="deck-viewport">
       <LogoSymbol />
       <div className="deck-stage-wrap" style={{ ["--scale" as string]: scale }}>
-        {idx === 8 ? <ReviewerApp /> : <HtmlSlide html={htmlSlides[idx]} />}
+        {idx === 9 ? <ReviewerApp /> : <HtmlSlide html={htmlSlides[idx]} />}
       </div>
 
       <div className="deck-pager">
