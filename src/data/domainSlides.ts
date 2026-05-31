@@ -117,7 +117,7 @@ export const slide3Html = `
   ${TOP_FLOW}
 
   <!-- Lower example layer (appears on top of the identical slide-2 flow) -->
-  <div style="margin-top:26px; display:grid; grid-template-columns:1fr 70px 1fr; align-items:stretch;">
+  <div style="margin-top:18px; display:grid; grid-template-columns:1fr 70px 1fr; align-items:stretch;">
 
     <!-- INCIDENT REPORT -->
     <div style="background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:26px 32px; display:flex; align-items:center; gap:22px;">
@@ -150,7 +150,7 @@ export const slide3Html = `
   </div>
 
   <!-- Dark summary bar (key message of slide 3) -->
-  <div style="margin-top:22px; background:var(--ink); color:var(--cream); padding:24px 40px; border-radius:12px; text-align:center; font-size:30px; line-height:1.35;">
+  <div style="margin-top:18px; background:var(--ink); color:var(--cream); padding:24px 40px; border-radius:12px; text-align:center; font-size:30px; line-height:1.35;">
     From <b style="color:var(--amber);">free text</b> to <b style="color:var(--amber);">1 best term</b> out of <b style="color:var(--amber);">~27,000</b> possible terms
   </div>
 
