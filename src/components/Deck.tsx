@@ -61,10 +61,10 @@ export function Deck() {
   }, []);
 
   return (
-    <div className="deck-viewport">
+    <div className="deck-viewport shadow-2xl">
       <LogoSymbol />
       <div className="deck-stage-wrap" style={{ ["--scale" as string]: scale }}>
-        {idx === 10 ? <ReviewerApp /> : <HtmlSlide html={htmlSlides[idx]} />}
+        {idx === 10 ? <div className="slide shadow-2xl overflow-hidden"><ReviewerApp /></div> : <HtmlSlide html={htmlSlides[idx]} />}
       </div>
 
       <div className="deck-pager">
