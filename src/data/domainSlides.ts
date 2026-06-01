@@ -114,7 +114,7 @@ const topFlow = ({ markMeddra = false, showExplain = false } = {}) => `
 
 const footer = (page: string) => `
   <div class="ftr">
-    <div>THOMAS HEGER &nbsp;|&nbsp; CAPSTONE II &nbsp;|&nbsp; 03 JUN 2026</div>
+    <div>SENTINEL<em style="font-style:italic; color:var(--terracotta-2);">AI</em> &nbsp;|&nbsp; 03 JUN 2026</div>
     <div class="rule"></div>
     <div style="color:var(--terracotta-2);">${page}</div>
   </div>`;
@@ -151,12 +151,12 @@ export const slide3Html = `
     <!-- PREFERRED TERM -->
     <div style="background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:26px 32px;
                 display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
-      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; letter-spacing:.2em;
+      <div style="font-family:'JetBrains Mono',monospace; font-size:20px; letter-spacing:.2em;
                   text-transform:uppercase; color:var(--terracotta-2); font-weight:600; margin-bottom:10px;">
         Preferred term
       </div>
       <div class="serif" style="font-size:42px; font-weight:600; color:var(--ink); line-height:1.05;">Hypoglycaemia</div>
-      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:var(--ink-2); margin-top:12px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:var(--ink-2); margin-top:12px;">
         MedDRA PT code: 10020993
       </div>
     </div>
