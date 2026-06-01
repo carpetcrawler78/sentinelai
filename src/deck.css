@@ -37,7 +37,6 @@
     box-sizing:border-box;
     font-feature-settings:"ss01","cv11";
     letter-spacing:-0.005em;
-    box-shadow: var(--tw-shadow-2xl, 0 25px 50px -12px rgb(0 0 0 / 0.25));
   }
   .serif{ font-family:"Newsreader", serif; font-weight:500; letter-spacing:-0.012em; }
   .mono{ font-family:"JetBrains Mono", monospace; }
