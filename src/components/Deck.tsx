@@ -10,18 +10,19 @@ import slideRequirements from "../data/slideRequirements.html?raw";
 import slidePipeline from "../data/slidePipeline.html?raw";
 import slidePipelineEngineered from "../data/slidePipelineEngineered.html?raw";
 import slideEvaluation from "../data/slideEvaluation.html?raw";
+import slideModelSelection from "../data/slideModelSelection.html?raw";
 import slidePipeline2 from "../data/slidePipeline2.html?raw";
 import slide5 from "../data/slide5.html?raw";
 import slide6 from "../data/slide6.html?raw";
 import slide8 from "../data/slide8.html?raw";
 import slide9 from "../data/slide9.html?raw";
 
-// Slide 12 = ReviewerApp (React, interactive)
+// Slide 13 = ReviewerApp (React, interactive)
 const htmlSlides: Record<number, string> = {
-  1: slide1, 2: slide2, 3: slide3, 4: slideProblem, 5: slide4, 6: slideRequirements, 7: slidePipeline, 8: slidePipelineEngineered, 9: slideEvaluation, 10: slide5, 11: slide6, 13: slide8, 14: slide9, 15: slidePipeline2,
+  1: slide1, 2: slide2, 3: slide3, 4: slideProblem, 5: slide4, 6: slideRequirements, 7: slidePipeline, 8: slidePipelineEngineered, 9: slideEvaluation, 10: slideModelSelection, 11: slide5, 12: slide6, 14: slide8, 15: slide9, 16: slidePipeline2,
 };
 
-const TOTAL = 15;
+const TOTAL = 16;
 
 function HtmlSlide({ html }: { html: string }) {
   return <div className="slide-html" dangerouslySetInnerHTML={{ __html: html }} />;
