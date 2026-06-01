@@ -15,12 +15,12 @@ import slide6 from "../data/slide6.html?raw";
 import slide8 from "../data/slide8.html?raw";
 import slide9 from "../data/slide9.html?raw";
 
-// Slide 10 = ReviewerApp (React, interactive)
+// Slide 11 = ReviewerApp (React, interactive)
 const htmlSlides: Record<number, string> = {
-  1: slide1, 2: slide2, 3: slide3, 4: slideProblem, 5: slide4, 6: slideRequirements, 7: slidePipeline, 8: slide5, 9: slide6, 11: slide8, 12: slide9, 13: slidePipeline2,
+  1: slide1, 2: slide2, 3: slide3, 4: slideProblem, 5: slide4, 6: slideRequirements, 7: slidePipeline, 8: slidePipelineEngineered, 9: slide5, 10: slide6, 12: slide8, 13: slide9, 14: slidePipeline2,
 };
 
-const TOTAL = 13;
+const TOTAL = 14;
 
 function HtmlSlide({ html }: { html: string }) {
   return <div className="slide-html" dangerouslySetInnerHTML={{ __html: html }} />;
