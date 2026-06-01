@@ -30,7 +30,7 @@
     width:1920px; height:1080px;
     background: var(--cream);
     color: var(--ink);
-    font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size:24px; line-height:1.45;
     position:relative; overflow:hidden;
     padding:80px 100px;

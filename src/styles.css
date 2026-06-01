@@ -24,7 +24,7 @@ html, body, #root {
   margin: 0;
   background: var(--cream, oklch(97% .012 75));
   color: var(--ink, oklch(22% .025 50));
-  font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* ============================================================
