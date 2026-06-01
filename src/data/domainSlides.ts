@@ -163,7 +163,7 @@ export const slide3Html = `
   </div>
 
   <!-- Dark summary bar (key message of slide 3) -->
-  <div style="margin-top:18px; background:var(--ink); color:var(--cream); padding:24px 40px; border-radius:12px; text-align:center; font-size:30px; line-height:1.35;">
+  <div class="concl">
     From <b style="color:var(--amber);">free text</b> to <b style="color:var(--amber);">1 best term</b> out of <b style="color:var(--amber);">~27,000</b> possible terms
   </div>
 
