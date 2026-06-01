@@ -73,10 +73,9 @@
     color:var(--cream);
     border-radius:12px;
     padding:0 40px;
-    display:flex; align-items:center; justify-content:center;
-    text-align:center; white-space:nowrap;
+    display:block; text-align:center; white-space:nowrap;
     font-family:"Nunito Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size:30px; line-height:1.35;
+    font-size:30px; line-height:84px;
   }
   .concl b{ color:var(--amber); font-weight:700; }
 
