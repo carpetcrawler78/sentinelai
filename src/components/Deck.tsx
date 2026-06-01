@@ -8,6 +8,7 @@ import slideProblem from "../data/slideProblem.html?raw";
 import slide4 from "../data/slide4.html?raw";
 import slideRequirements from "../data/slideRequirements.html?raw";
 import slidePipeline from "../data/slidePipeline.html?raw";
+import slidePipelineEngineered from "../data/slidePipelineEngineered.html?raw";
 import slidePipeline2 from "../data/slidePipeline2.html?raw";
 import slide5 from "../data/slide5.html?raw";
 import slide6 from "../data/slide6.html?raw";
