@@ -59,6 +59,27 @@
   }
   .ftr .rule{ flex:1; height:1px; background:var(--line); margin:0 24px; }
 
+  /* ============ Conclusion / summary box (shared across all slides) ============ */
+  .concl{
+    position:absolute;
+    left:50%;
+    bottom:104px;
+    transform:translateX(-50%);
+    width:fit-content;
+    max-width:1700px;
+    height:84px;
+    box-sizing:border-box;
+    background:var(--ink);
+    color:var(--cream);
+    border-radius:12px;
+    padding:0 40px;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center; white-space:nowrap;
+    font-family:"Nunito Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:30px; line-height:1.35;
+  }
+  .concl b{ color:var(--amber); font-weight:700; }
+
   /* ============ Type ============ */
   h1.title{ font-family:"Newsreader", serif; font-weight:500; font-size:132px; line-height:1.0; letter-spacing:-.025em; margin:0; color:var(--ink); }
   h1.title em{ font-style:italic; color: var(--terracotta-2); font-weight:500; }
