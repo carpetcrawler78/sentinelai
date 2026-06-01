@@ -141,10 +141,10 @@ export function ReviewerApp() {
                 transition: "all .15s ease",
               }}
             >
-              <div style={{ fontFamily: "JetBrains Mono, monospace", fontSize: 16, fontWeight: 700, letterSpacing: ".14em", textTransform: "uppercase" }}>
+              <div style={{ fontFamily: "JetBrains Mono, monospace", fontSize: 20, fontWeight: 700, letterSpacing: ".14em", textTransform: "uppercase" }}>
                 {cc.buttonLabel}
               </div>
-              <div style={{ fontSize: 14, marginTop: 4, opacity: active ? 0.9 : 0.65, fontStyle: "italic" }}>
+              <div style={{ fontSize: 20, marginTop: 4, opacity: active ? 0.9 : 0.65, fontStyle: "italic" }}>
                 {cc.buttonSub}
               </div>
             </button>
@@ -175,7 +175,7 @@ export function ReviewerApp() {
             justifyContent: "space-between",
             alignItems: "center",
             fontFamily: "JetBrains Mono, monospace",
-            fontSize: 14,
+            fontSize: 20,
             letterSpacing: ".05em",
           }}
         >
@@ -188,7 +188,7 @@ export function ReviewerApp() {
           {/* LEFT */}
           <div style={{ padding: "20px 24px", borderRight: "1px solid var(--line)", display: "flex", flexDirection: "column", gap: 14 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <div className="mono" style={{ fontSize: 14, color: "var(--ink-2)", fontWeight: 600 }}>
+              <div className="mono" style={{ fontSize: 20, color: "var(--ink-2)", fontWeight: 600 }}>
                 case_id {c.case_id}
               </div>
               <span
@@ -196,8 +196,8 @@ export function ReviewerApp() {
                   background: "var(--ink)",
                   color: "var(--cream)",
                   fontFamily: "JetBrains Mono, monospace",
-                  fontSize: 11,
-                  padding: "3px 9px",
+                  fontSize: 20,
+                  padding: "4px 12px",
                   borderRadius: 4,
                   letterSpacing: ".10em",
                   fontWeight: 700,
@@ -207,7 +207,7 @@ export function ReviewerApp() {
               </span>
             </div>
 
-            <div className="mono" style={{ fontSize: 11, color: "var(--muted)", letterSpacing: ".18em", textTransform: "uppercase", fontWeight: 600 }}>
+            <div className="mono" style={{ fontSize: 20, color: "var(--muted)", letterSpacing: ".18em", textTransform: "uppercase", fontWeight: 600 }}>
               MAUDE narrative
             </div>
             <div
@@ -218,7 +218,7 @@ export function ReviewerApp() {
                 padding: "14px 18px",
                 borderRadius: 6,
                 fontFamily: "Newsreader, serif",
-                fontSize: 17,
+                fontSize: 20,
                 fontStyle: "italic",
                 color: "var(--ink)",
                 lineHeight: 1.45,
@@ -227,7 +227,7 @@ export function ReviewerApp() {
               {c.narrative}
             </div>
 
-            <table className="mono" style={{ width: "100%", fontSize: 13, color: "var(--ink-2)", borderCollapse: "collapse", marginTop: 6 }}>
+            <table className="mono" style={{ width: "100%", fontSize: 20, color: "var(--ink-2)", borderCollapse: "collapse", marginTop: 6 }}>
               <tbody>
                 {([
                   ["device", c.device],
@@ -236,8 +236,8 @@ export function ReviewerApp() {
                   ["received", c.received],
                 ] as const).map(([k, v]) => (
                   <tr key={k}>
-                    <td style={{ padding: "5px 12px 5px 0", color: "var(--muted)", width: 130, borderBottom: "1px dashed var(--line)" }}>{k}</td>
-                    <td style={{ padding: "5px 0", borderBottom: "1px dashed var(--line)" }}>{v}</td>
+                    <td style={{ padding: "3px 12px 3px 0", color: "var(--muted)", width: 130, borderBottom: "1px dashed var(--line)" }}>{k}</td>
+                    <td style={{ padding: "3px 0", borderBottom: "1px dashed var(--line)" }}>{v}</td>
                   </tr>
                 ))}
               </tbody>
@@ -247,10 +247,10 @@ export function ReviewerApp() {
           {/* RIGHT */}
           <div style={{ padding: "20px 24px", display: "flex", flexDirection: "column", gap: 14 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-              <div className="mono" style={{ fontSize: 14, color: "var(--ink-2)", letterSpacing: ".14em", textTransform: "uppercase", fontWeight: 700 }}>
+              <div className="mono" style={{ fontSize: 20, color: "var(--ink-2)", letterSpacing: ".14em", textTransform: "uppercase", fontWeight: 700 }}>
                 SentinelAI suggestions
               </div>
-              <div className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>
+              <div className="mono" style={{ fontSize: 20, color: "var(--muted)" }}>
                 model llama3.2:3b &middot; v2026-05-14
               </div>
             </div>
@@ -267,12 +267,12 @@ export function ReviewerApp() {
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
                 <div style={{ flex: 1 }}>
                   <div className="serif" style={{ fontSize: 22, fontWeight: 600, color: "var(--ink)", lineHeight: 1.2 }}>{c.top.pt}</div>
-                  <div className="mono" style={{ fontSize: 12, color: "var(--muted)", marginTop: 4 }}>
+                  <div className="mono" style={{ fontSize: 20, color: "var(--muted)", marginTop: 4 }}>
                     pt_code {c.top.code} &middot; SOC {c.top.soc}
                   </div>
                 </div>
                 <div style={{ textAlign: "right" }}>
-                  <div className="mono" style={{ fontSize: 10, color: "var(--muted)", letterSpacing: ".10em", textTransform: "uppercase" }}>ranking</div>
+                  <div className="mono" style={{ fontSize: 20, color: "var(--muted)", letterSpacing: ".10em", textTransform: "uppercase" }}>ranking</div>
                   <div
                     className="mono"
                     style={{
@@ -285,13 +285,13 @@ export function ReviewerApp() {
                     {c.top.score.toFixed(2)}
                   </div>
                   {c.lowConfidence && (
-                    <div className="mono" style={{ fontSize: 9, color: "var(--warn)", marginTop: 4, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" }}>
+                    <div className="mono" style={{ fontSize: 20, color: "var(--warn)", marginTop: 4, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" }}>
                       low confidence<br />reviewer required
                     </div>
                   )}
                 </div>
               </div>
-              <div style={{ fontSize: 13, color: "var(--ink-2)", fontStyle: "italic", marginTop: 10, lineHeight: 1.4 }}>
+              <div style={{ fontSize: 20, color: "var(--ink-2)", fontStyle: "italic", marginTop: 10, lineHeight: 1.4 }}>
                 “{c.top.reason}”
               </div>
               <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
@@ -303,15 +303,15 @@ export function ReviewerApp() {
 
             {/* Alternatives */}
             <div>
-              <div className="mono" style={{ fontSize: 11, color: "var(--muted)", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 8, fontWeight: 600 }}>
+              <div className="mono" style={{ fontSize: 20, color: "var(--muted)", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 8, fontWeight: 600 }}>
                 Alternatives (top 4)
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
                 {c.alts.map((a) => (
                   <div
                     key={a.code}
                     style={{
-                      padding: "7px 12px",
+                      padding: "5px 10px",
                       background: "var(--cream-2)",
                       border: "1px solid var(--line)",
                       borderRadius: 6,
@@ -322,10 +322,10 @@ export function ReviewerApp() {
                     }}
                   >
                     <div style={{ display: "flex", gap: 10, alignItems: "baseline" }}>
-                      <span style={{ fontSize: 14, color: "var(--ink)" }}>{a.pt}</span>
-                      <span className="mono" style={{ fontSize: 11, color: "var(--muted)" }}>{a.code}</span>
+                      <span style={{ fontSize: 20, color: "var(--ink)" }}>{a.pt}</span>
+                      <span className="mono" style={{ fontSize: 20, color: "var(--muted)" }}>{a.code}</span>
                     </div>
-                    <span className="mono" style={{ fontSize: 12, color: "var(--muted)" }}>{a.score.toFixed(2)}</span>
+                    <span className="mono" style={{ fontSize: 20, color: "var(--muted)" }}>{a.score.toFixed(2)}</span>
                   </div>
                 ))}
               </div>
@@ -337,12 +337,12 @@ export function ReviewerApp() {
         <div
           style={{
             borderTop: "1px solid var(--line)",
-            padding: "10px 20px",
+            padding: "8px 20px",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             fontFamily: "JetBrains Mono, monospace",
-            fontSize: 12,
+            fontSize: 20,
             color: "var(--muted)",
             background: "var(--cream-2)",
           }}
@@ -354,7 +354,7 @@ export function ReviewerApp() {
             </span>
             <span>ts_in {c.ts_in}</span>
             <span>latency {c.latency}</span>
-            <button disabled style={{ ...btn(false), opacity: 0.4, cursor: "not-allowed", fontSize: 12, padding: "4px 10px" }}>
+            <button disabled style={{ ...btn(false), opacity: 0.4, cursor: "not-allowed", fontSize: 20, padding: "4px 10px" }}>
               Next case →
             </button>
           </div>
@@ -373,7 +373,7 @@ export function ReviewerApp() {
 
 function btn(primary: boolean): React.CSSProperties {
   return {
-    fontSize: 13,
+    fontSize: 20,
     padding: "7px 14px",
     border: `1.5px solid ${primary ? "var(--terracotta-2)" : "var(--line)"}`,
     background: primary ? "var(--terracotta-2)" : "var(--cream)",
