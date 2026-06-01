@@ -13,7 +13,7 @@ import slideModelSelection from "../data/slideModelSelection.html?raw";
 import slideDeployment from "../data/slideDeployment.html?raw";
 
 const htmlSlides: Record<number, string> = {
-  1: slide1, 2: slide2, 3: slide3, 4: slideProblem, 5: slide4, 6: slideRequirements, 7: slidePipeline, 8: slidePipelineEngineered, 9: slideEvaluation, 10: slideModelSelection,
+  1: slide1, 2: slide2, 3: slide3, 4: slideProblem, 5: slide4, 6: slideRequirements, 7: slidePipeline, 8: slidePipelineEngineered, 9: slideEvaluation, 10: slideModelSelection, 11: slideDeployment,
 };
 
 const TOTAL = 10;
