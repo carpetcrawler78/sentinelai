@@ -54,7 +54,7 @@
   .ftr{
     position:absolute; bottom:40px; left:100px; right:100px;
     display:flex; justify-content:space-between; align-items:center;
-    font-size:15px; color: var(--muted);
+    font-size:17px; color: var(--muted);
     letter-spacing:.12em; text-transform:uppercase; white-space:nowrap;
   }
   .ftr .rule{ flex:1; height:1px; background:var(--line); margin:0 24px; }
