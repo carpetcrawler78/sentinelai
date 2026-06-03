@@ -160,9 +160,10 @@ Stage two, on the usable shortlist: ELECTRA-base wins at soft-at-5 of zero
 point six-two-five, ahead of the two MiniLM rerankers.
 
 Stage three, the suggestion: our local qwen-2.5 model reaches p-at-1 of zero
-point three-seven-five -- and it actually edges out the cloud reference model.
-The cloud model sits below it here, and it is greyed out on purpose: it is a
-benchmark only, excluded from production by GDPR, not by capability.
+point three-seven-five -- and on this small twenty-four-case evaluation it
+slightly edges out the cloud reference. The cloud model is greyed out on
+purpose: it is a benchmark only, excluded from production by GDPR, not by
+capability.
 
 So the selected stack is fully local: hybrid retrieval, ELECTRA rerank, qwen
 suggestion.
@@ -231,7 +232,8 @@ server as the law requires.
 GDPR Article 44 -- patient data cannot leave Europe -- and health data is a
 special category under Article 9. The MDR also requires us to pin the exact
 model version per case, years later. The cloud model in my comparison is a
-benchmark reference only; our local model actually matched or beat it.
+benchmark reference only; on a small twenty-four-case eval our local model
+matched or slightly beat it.
 
 **"What is the ranking index? Is it accuracy?"**
 A ranking index, not an accuracy number. Higher means earlier in the review

@@ -64,12 +64,12 @@ export function GrafanaSlide() {
               onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
             />
             <div style={{
-              fontFamily: "JetBrains Mono, monospace", fontSize: 14,
+              fontFamily: "JetBrains Mono, monospace", fontSize: 20,
               color: "#555", letterSpacing: ".12em", textTransform: "uppercase",
               textAlign: "center", lineHeight: 2,
             }}>
               Tunnel not active<br />
-              <span style={{ fontSize: 12, color: "#444" }}>
+              <span style={{ fontSize: 14, color: "#444" }}>
                 ssh -N -L 8000:127.0.0.1:8000 -L 3000:127.0.0.1:3000 cap@<server>
               </span>
             </div>
@@ -96,11 +96,6 @@ export function GrafanaSlide() {
         Dockerized service stack &nbsp;&middot;&nbsp; FastAPI &nbsp;&middot;&nbsp; PostgreSQL &nbsp;&middot;&nbsp; Hetzner &nbsp;&middot;&nbsp; all local -- no external AI APIs
       </div>
 
-      <div className="ftr">
-        <div>SENTINEL<em style={{ fontStyle: "italic", color: "var(--terracotta-2)" }}>AI</em> &nbsp;|&nbsp; 03 JUN 2026</div>
-        <div className="rule" />
-        <div style={{ color: "var(--terracotta-2)" }}>12 / 13</div>
-      </div>
     </section>
   );
 }

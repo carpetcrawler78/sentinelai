@@ -122,7 +122,7 @@ const footer = (page: string) => `
 export const slide2Html = `
 <section class="slide" data-screen-label="02 Domain" style="display:flex; flex-direction:column;">
   ${topFlow({ markMeddra: true, showExplain: true })}
-  ${footer("2 / 10")}
+  ${footer("2 / 13")}
 </section>`;
 
 export const slide3Html = `
@@ -167,5 +167,5 @@ export const slide3Html = `
     From <b style="color:var(--amber);">free text</b> to <b style="color:var(--amber);">1 best term</b> out of <b style="color:var(--amber);">~27,000</b> possible terms
   </div>
 
-  ${footer("3 / 10")}
+  ${footer("3 / 13")}
 </section>`;
