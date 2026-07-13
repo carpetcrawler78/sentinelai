@@ -68,9 +68,9 @@ export function GrafanaSlide() {
               color: "#555", letterSpacing: ".12em", textTransform: "uppercase",
               textAlign: "center", lineHeight: 2,
             }}>
-              Tunnel not active<br />
+              Static screenshot<br />
               <span style={{ fontSize: 14, color: "#444" }}>
-                ssh -N -L 8000:127.0.0.1:8000 -L 3000:127.0.0.1:3000 cap@<server>
+                live backend offline -- see README for details
               </span>
             </div>
           </div>

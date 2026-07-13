@@ -1,14 +1,22 @@
 # SentinelAI -- Presentation Deck
 
+> Status: Completed capstone / portfolio project. This is the presentation and
+> static demo frontend for SentinelAI. The original backend deployment is no
+> longer running (deliberately paused, not a bug) -- this deck runs standalone
+> with static fallbacks and needs no live backend to present.
+
 SentinelAI is a MedDRA Coding Assistance Tool that automates the classification
 of adverse event reports from free text into standardized MedDRA Preferred Terms.
-This repository contains the 14-slide presentation deck built with Vite + React.
+This repository contains the 14-slide presentation deck built with Vite + React
++ TypeScript.
+
+Backend repository: https://github.com/carpetcrawler78/sentinelai-backend.
 
 ## Quickstart
 
 ```bash
-git clone https://github.com/carpetcrawler78/sentinelai-capstone-v5.git
-cd sentinelai-capstone-v5
+git clone https://github.com/carpetcrawler78/sentinelai.git
+cd sentinelai
 npm install
 npm run dev
 ```
@@ -26,18 +34,9 @@ URL on startup).
 | Home / End | First / last slide |
 | Pager buttons | Click prev/next |
 
-## Live-demo slides (optional)
+## Demo slides
 
-Slides 12 and 13 show a Grafana operations dashboard and an interactive reviewer
-demo. Without a tunnel, both fall back to static content automatically -- no
+Slides 12 and 13 show static screenshots of the Grafana operations dashboard
+and the reviewer workflow (the original live backend is no longer running).
+Both slides render standalone, with no backend connection required -- no
 blank screens, no errors.
-
-For live data (requires access to the Hetzner server):
-
-```bash
-ssh -N -L 8000:127.0.0.1:8000 -L 3000:127.0.0.1:3000 cap@<server>
-```
-
-Then reload the browser. Slide 12 will switch to the live Grafana dashboard
-once the health check on `localhost:8000` succeeds. A toggle button lets you
-switch between live and screenshot views manually.
