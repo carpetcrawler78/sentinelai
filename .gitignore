@@ -1,5 +1,6 @@
 # Archive (local only -- full snapshot on backup branch)
 _archive/
+_internal_dev/
 
 # Logs
 logs
