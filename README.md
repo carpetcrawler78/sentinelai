@@ -41,3 +41,8 @@ Slides 12 and 13 show static screenshots of the Grafana operations dashboard
 and the reviewer workflow (the original live backend is no longer running).
 Both slides render standalone, with no backend connection required -- no
 blank screens, no errors.
+
+## Roadmap
+
+- Deploy the live presentation to Cloudflare Workers (wrangler.jsonc is
+  already configured) and link it from the documentation site's Frontend page.
