@@ -11,6 +11,7 @@ This repository contains the 14-slide presentation deck built with Vite + React
 + TypeScript.
 
 Backend repository: https://github.com/carpetcrawler78/sentinelai-backend.
+Documentation: https://carpetcrawler78.github.io/sentinelai-docs/
 
 ## Quickstart
 
