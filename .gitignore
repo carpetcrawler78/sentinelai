@@ -36,3 +36,20 @@ dist-ssr
 *.sw?
 *.bak
 *.bak2
+
+# Local AI assistant / agent files (not published)
+CLAUDE.md
+AGENTS.md
+.claude/
+.cursor/
+**/CC_PROMPT_*.md
+*settings.local.json
+.agents/
+.lovable/
+
+# Removed from the repository, kept locally
+SESSION_HANDOFF_*.md
+STABILITY_HANDOFF_*.md
+GRAFANA_REVIEWER_PORT_PLAN.md
+CC_PROMPT_*.md
+LOVABLE_PROMPT_*.md
